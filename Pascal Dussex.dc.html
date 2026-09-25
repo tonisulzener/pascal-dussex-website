@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#f1ebdf;color:#1c1714}
+*{box-sizing:border-box}
+a{color:#b3261e;text-decoration:none}
+a:hover{color:#1c1714}
+img{display:block}
+</style>
+</helmet>
+<div style="font-family:'Newsreader',Georgia,serif;background:#f1ebdf;color:#1c1714;min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:10;background:rgba(241,235,223,.94);backdrop-filter:blur(6px);border-bottom:1px solid #1c1714">
+    <div style="max-width:1320px;margin:0 auto;padding:14px clamp(16px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <a href="#top" style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:26px;letter-spacing:.02em;text-transform:uppercase;color:#1c1714">Pascal Dussex</a>
+      <nav style="display:flex;gap:clamp(12px,2.4vw,28px);flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:.08em">
+        <a href="#live" style="color:#1c1714" style-hover="color:#b3261e">Live</a>
+        <a href="#bands" style="color:#1c1714" style-hover="color:#b3261e">Bands</a>
+        <a href="#zeitreise" style="color:#1c1714" style-hover="color:#b3261e">Zeitreise</a>
+        <a href="#velo" style="color:#1c1714" style-hover="color:#b3261e">Velowerkstatt</a>
+        <a href="#kontakt" style="color:#1c1714" style-hover="color:#b3261e">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" data-screen-label="Hero" style="max-width:1320px;margin:0 auto;padding:clamp(28px,5vw,64px) clamp(16px,4vw,48px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(24px,4vw,56px);align-items:end">
+    <div style="display:flex;flex-direction:column;gap:28px;padding-bottom:12px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;display:flex;gap:10px;align-items:center">
+        <span style="width:10px;height:10px;border-radius:50%;background:#b3261e;display:inline-block"></span>
+        <span>Bern · seit 1980 auf der Bühne</span>
+      </div>
+      <h1 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(84px,13vw,196px);line-height:.82;letter-spacing:-.01em;text-transform:uppercase">Pascal<br>Dussex</h1>
+      <p style="margin:0;font-size:clamp(20px,2vw,26px);line-height:1.35;max-width:30ch;text-wrap:pretty">Sänger, Entertainer und Velomech. Soul mit zehn Mann, Swiss-Comedy zu zweit, Jazz im Anzug – und dazwischen ein Budeli mit Velos.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#live" style="font-family:'IBM Plex Mono',monospace;font-size:14px;text-transform:uppercase;letter-spacing:.08em;background:#1c1714;color:#f1ebdf;padding:14px 22px" style-hover="background:#b3261e;color:#f1ebdf">Nächste Konzerte</a>
+        <a href="#velo" style="font-family:'IBM Plex Mono',monospace;font-size:14px;text-transform:uppercase;letter-spacing:.08em;border:1px solid #1c1714;color:#1c1714;padding:13px 22px" style-hover="background:#1c1714;color:#f1ebdf">Velo flicken</a>
+      </div>
+    </div>
+    <figure style="margin:0;position:relative">
+      <img src="{{ heroSrc }}" alt="Pascal Dussex" style="display:block;width:100%;aspect-ratio:1568/1980;object-fit:cover;object-position:center bottom;background:#1c1714">
+      <figcaption style="position:absolute;left:0;bottom:0;background:#f1ebdf;padding:8px 12px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase">{{ heroCaption }}</figcaption>
+    </figure>
+  </section>
+
+  <div style="border-top:1px solid #1c1714;border-bottom:1px solid #1c1714;margin-top:clamp(32px,5vw,64px);overflow:hidden;background:#1c1714;color:#f1ebdf">
+    <div style="max-width:1320px;margin:0 auto;padding:14px clamp(16px,4vw,48px);display:flex;gap:28px;flex-wrap:wrap;font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:clamp(20px,2.4vw,30px);text-transform:uppercase;letter-spacing:.03em">
+      <span>Dussex' Soultrain</span><span style="color:#e0584b">✶</span><span>Les trois Suisses</span><span style="color:#e0584b">✶</span><span>Dussex' True Blue</span><span style="color:#e0584b">✶</span><a href="#velo" style="color:#5b8def" style-hover="color:#8fb0f5">Das Blaue Wunder</a>
+    </div>
+  </div>
+
+  <section id="live" data-screen-label="Live" style="max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,112px) clamp(16px,4vw,48px)">
+    <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px">
+      <h2 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(56px,8vw,112px);line-height:.85;text-transform:uppercase">Live</h2>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="3">
+          <button onClick="{{ f.onClick }}" style="font-family:'IBM Plex Mono',monospace;font-size:13px;text-transform:uppercase;letter-spacing:.06em;padding:10px 14px;border:1px solid #1c1714;cursor:pointer;background:{{ f.bg }};color:{{ f.fg }}">{{ f.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <div style="border-top:2px solid #1c1714">
+      <sc-for list="{{ gigs }}" as="g" hint-placeholder-count="6">
+        <div style="display:grid;grid-template-columns:minmax(92px,140px) minmax(0,1fr) auto;gap:clamp(12px,3vw,40px);align-items:center;padding:20px 0;border-bottom:1px solid #1c1714">
+          <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;line-height:.9">
+            <div style="font-size:clamp(34px,4vw,48px)">{{ g.day }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:4px">{{ g.monthYear }}</div>
+          </div>
+          <div style="min-width:0">
+            <div style="font-size:clamp(20px,2vw,26px);line-height:1.2">{{ g.place }}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;margin-top:6px;color:#5a4f47">{{ g.venue }}</div>
+          </div>
+          <a href="{{ g.url }}" target="_blank" style="font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.06em;padding:8px 12px;border:1px solid #1c1714;color:#1c1714;white-space:nowrap" style-hover="background:#1c1714;color:#f1ebdf">{{ g.band }} ↗</a>
+        </div>
+      </sc-for>
+    </div>
+    <p style="margin:20px 0 0;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#5a4f47">Weitere Termine folgen. Tickets über die jeweilige Band-Seite.</p>
+  </section>
+
+  <section id="bands" data-screen-label="Bands" style="background:#1c1714;color:#f1ebdf">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,112px) clamp(16px,4vw,48px)">
+      <div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px">
+        <h2 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(56px,8vw,112px);line-height:.85;text-transform:uppercase">Bands</h2>
+        <p style="margin:0;max-width:36ch;font-size:20px;line-height:1.4;color:#d8cfc2">Drei Formationen, eine Stimme. Jede Band hat ihre eigene Seite – hier geht's hin.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:2px;background:#3a322c;border:2px solid #3a322c">
+        <sc-for list="{{ bands }}" as="b" hint-placeholder-count="4">
+          <a href="{{ b.url }}" target="_blank" style="display:flex;flex-direction:column;background:#1c1714;color:#f1ebdf" style-hover="background:#2a221d;color:#f1ebdf">
+            <div style="aspect-ratio:4/3;overflow:hidden;background:#000">
+              <img src="{{ b.img }}" alt="{{ b.name }}" style="width:100%;height:100%;object-fit:cover;object-position:{{ b.pos }};filter:grayscale(.2)">
+            </div>
+            <div style="padding:24px;display:flex;flex-direction:column;gap:12px;flex:1">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#e0584b">{{ b.genre }}</div>
+              <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:38px;line-height:.95;text-transform:uppercase">{{ b.name }}</div>
+              <p style="margin:0;font-size:18px;line-height:1.4;color:#d8cfc2;text-wrap:pretty;flex:1">{{ b.text }}</p>
+              <sc-if value="{{ b.members }}" hint-placeholder-val="{{ false }}">
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.6;color:#d8cfc2">{{ b.members }}</div>
+              </sc-if>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#f1ebdf;border-top:1px solid #3a322c;padding-top:14px">{{ b.domain }} ↗</div>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="zeitreise" data-screen-label="Zeitreise" style="max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,112px) clamp(16px,4vw,48px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:24px 56px;align-items:end;margin-bottom:48px">
+      <h2 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(56px,8vw,112px);line-height:.85;text-transform:uppercase">Zeit­reise</h2>
+      <p style="margin:0;font-size:20px;line-height:1.45;max-width:44ch;text-wrap:pretty">Vom Buben mit dem Glacé zum Frontmann mit Bläsersatz. Ein halbes Jahrhundert in sechs Bildern.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:40px 24px">
+      <sc-for list="{{ timeline }}" as="t" hint-placeholder-count="7">
+        <figure style="margin:0;display:flex;flex-direction:column;gap:12px">
+          <div style="aspect-ratio:3/4;overflow:hidden;background:#d8cfc2;border:1px solid #1c1714">
+            <img src="{{ t.img }}" alt="{{ t.title }}" style="width:100%;height:100%;object-fit:cover;object-position:{{ t.pos }}">
+          </div>
+          <figcaption style="display:flex;flex-direction:column;gap:4px">
+            <div style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:44px;line-height:.9;color:#b3261e">{{ t.year }}</div>
+            <div style="font-size:19px;line-height:1.3">{{ t.title }}</div>
+          </figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="velo" data-screen-label="Velo" style="background:#b3261e;color:#fff">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,112px) clamp(16px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,72px)">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase">Wenn gerade kein Konzert ist</div>
+        <h2 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(56px,8vw,112px);line-height:.85;text-transform:uppercase">Das Blaue Wunder</h2>
+        <p style="margin:0;font-size:21px;line-height:1.45;max-width:38ch;text-wrap:pretty">Velowerkstatt im Marzili, Bern. Rhythm u Byciclette für ds Gmüet – Rock 'n' Roll fürs Velo statt Blues. Ist etwas «broche, verheit oder verboge»? Termin abmachen und vorbeikommen.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;border-top:2px solid #fff">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
+          <div style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.55);font-size:21px">
+            <span>{{ s.name }}</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;white-space:nowrap">{{ s.note }}</span>
+          </div>
+        </sc-for>
+        <div style="margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;font-family:'IBM Plex Mono',monospace;font-size:14px;line-height:1.6">
+          <div><div style="text-transform:uppercase;letter-spacing:.1em;font-size:12px;margin-bottom:6px">Adresse</div>Münzrain 14<br>3005 Bern</div>
+          <div><div style="text-transform:uppercase;letter-spacing:.1em;font-size:12px;margin-bottom:6px">Termin</div><a href="tel:+41796502153" style="color:#fff">079 650 21 53</a><br><a href="mailto:pascal@dasblauewunder.be" style="color:#fff">pascal@dasblauewunder.be</a></div>
+          <div style="grid-column:1/-1"><div style="text-transform:uppercase;letter-spacing:.1em;font-size:12px;margin-bottom:6px">Anfahrt</div>Ab Talstation Marzilibähnli dem Wegweiser Bundesgärtnerei folgen, bis ans Ende des gelb geschindelten Hauses. Oder von der Bundesterrasse die Vannazhalde hinunter.</div>
+          <a href="https://www.dasblauewunder.be/" target="_blank" style="grid-column:1/-1;justify-self:start;font-size:14px;text-transform:uppercase;letter-spacing:.08em;background:#fff;color:#b3261e;padding:14px 22px" style-hover="background:#1c1714;color:#fff">dasblauewunder.be ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" data-screen-label="Kontakt" style="max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,112px) clamp(16px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(32px,5vw,72px);align-items:center">
+    <img src="assets/corona-bart.jpg" alt="Pascal Dussex, Porträt" style="width:100%;aspect-ratio:1/1;object-fit:cover;border:1px solid #1c1714">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <h2 style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(56px,8vw,112px);line-height:.85;text-transform:uppercase">Kontakt</h2>
+      <p style="margin:0;font-size:21px;line-height:1.45;max-width:36ch">Booking, Presse, ein kaputtes Velo oder einfach Hallo sagen.</p>
+      <div style="display:flex;flex-direction:column;border-top:2px solid #1c1714;font-size:21px">
+        <a href="mailto:pascal@dasblauewunder.be" style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid #1c1714;color:#1c1714" style-hover="color:#b3261e"><span>E-Mail</span><span style="font-family:'IBM Plex Mono',monospace;font-size:15px">pascal@dussex.ch</span></a>
+        <a href="tel:+41796502153" style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid #1c1714;color:#1c1714" style-hover="color:#b3261e"><span>Telefon</span><span style="font-family:'IBM Plex Mono',monospace;font-size:15px">079 650 21 53</span></a>
+        <a href="https://www.dussexsoultrain.ch/kontakt" target="_blank" style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid #1c1714;color:#1c1714" style-hover="color:#b3261e"><span>Booking Soultrain</span><span style="font-family:'IBM Plex Mono',monospace;font-size:15px">dussexsoultrain.ch ↗</span></a>
+        <a href="mailto:info@kulturbau.ch" style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid #1c1714;color:#1c1714" style-hover="color:#b3261e"><span>Booking Les trois Suisses</span><span style="font-family:'IBM Plex Mono',monospace;font-size:15px">info@kulturbau.ch</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid #1c1714">
+    <div style="max-width:1320px;margin:0 auto;padding:24px clamp(16px,4vw,48px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em">
+      <span>© 2026 Pascal Dussex</span><span>Impressum · Datenschutz</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroPhoto&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Bühne (Porträt)&quot;,&quot;Porträt (Bart)&quot;,&quot;Bal de Berne 1986&quot;],&quot;default&quot;:&quot;Bühne (Porträt)&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { filter: 'Alle' };
+  renderVals() {
+    const heroes = {
+      'Bühne (Porträt)': { src: 'assets/portrait-12.jpg', pos: 'center 35%', cap: 'Live auf der Bühne' },
+      'Porträt (Bart)': { src: 'assets/corona-bart.jpg', pos: 'center', cap: 'Porträt, 2020' },
+      'Bal de Berne 1986': { src: 'assets/1986-bal-de-berne.jpg', pos: '15% center', cap: 'Bal de Berne, ca. 1986' },
+    };
+    const h = heroes[this.props.heroPhoto] || heroes['Bühne (Porträt)'];
+    const ST = { band: 'Soultrain', url: 'https://www.dussexsoultrain.ch/kalender' };
+    const TB = { band: 'True Blue', url: 'https://www.trueblue-jazz.com/konzerte' };
+    const LTS = { band: 'Les trois Suisses', url: 'https://www.lestroissuisses.ch/tourdaten' };
+    const all = [
+      ['26', 'Sep 2026', 'Biel', 'Le Singe · Anniversary', ST],
+      ['23', 'Okt 2026', 'Wangen-Brüttisellen', 'Gasthof Sternen · «Beiz»', LTS],
+      ['30', 'Okt 2026', 'Hinwil-Hadlikon', 'Areal im Tobel · «Beiz»', LTS],
+      ['31', 'Okt 2026', 'Frauenfeld', 'Eisenwerk · feat. Freda Goodlett', ST],
+      ['14', 'Nov 2026', 'Langnau i. E.', 'Kupferschmiede · 40 Y. Paragraph', ST],
+      ['10', 'Dez 2026', 'Bern', 'Breitschträff', TB],
+      ['19', 'Feb 2027', 'Wald ZH', 'Reformierte Kirche · «Beiz»', LTS],
+      ['26', 'Feb 2027', 'Lörrach (DE)', 'Jazztone', TB],
+      ['31', 'Mär 2027', 'Schlieren ZH', 'Stürmeierhuus · «Beiz»', LTS],
+      ['02', 'Apr 2027', 'Staufen', 'Zopfhuus · «Beiz»', LTS],
+      ['22', 'Mai 2027', 'Erlach', 'Erlach Festival · feat. Freda Goodlett', ST],
+      ['20', 'Nov 2027', 'Mühlethurnen', 'Alti Moschti', TB],
+    ].map(([day, monthYear, place, venue, b]) => ({ day, monthYear, place, venue, ...b }));
+    const f = this.state.filter;
+    const gigs = f === 'Alle' ? all : all.filter(g => g.band === f);
+    const filters = ['Alle', 'Soultrain', 'Les trois Suisses', 'True Blue'].map(label => ({
+      label, bg: label === f ? '#1c1714' : 'transparent', fg: label === f ? '#f1ebdf' : '#1c1714',
+      onClick: () => this.setState({ filter: label }),
+    }));
+    return {
+      heroSrc: h.src, heroPos: h.pos, heroCaption: h.cap, gigs, filters,
+      bands: [
+        { name: "Dussex' Soultrain", genre: 'Soul & Funk', img: 'assets/1980-konzert.jpg', pos: 'center 40%', url: 'https://www.dussexsoultrain.ch/', domain: 'dussexsoultrain.ch', text: 'Zehnköpfige Soul- & Funk-Truppe mit messerscharfem fünfköpfigem Bläsersatz. Aktuell auf Anniversary-Tour.' },
+        { name: 'Les trois Suisses', genre: 'Musik-Comedy', img: 'assets/radioshow.jpg', pos: 'center 30%', url: 'https://www.lestroissuisses.ch/', domain: 'lestroissuisses.ch', text: 'Drei Schweizer, rote Fliegen, viel Schalk. Das aktuelle Programm heisst «Beiz».' },
+        { name: "Dussex' True Blue", genre: "Jazz 'n' Soul", img: 'assets/1986-bal-de-berne.jpg', pos: '15% center', url: 'https://www.trueblue-jazz.com/', domain: 'trueblue-jazz.com', text: 'Seit über 30 Jahren in Originalbesetzung: funkiger Blues, swingender Jazz, französische Chansons. Neue CD «Stripes Is Our Favorite Color» (2024).', members: 'Pascal Dussex · Andi Erchinger · Wege Wüthrich · German Klaiber · Elmar Frey' },
+      ],
+      timeline: [
+        { year: '1973', title: 'Glacé in der Hand, Blick nach vorn', img: 'assets/1973.jpg', pos: 'center 30%' },
+        { year: '1980', title: 'Das «erste» Konzert', img: 'assets/1980-konzert.jpg', pos: 'center 40%' },
+        { year: '1986', title: 'Bal de Berne', img: 'assets/1986-bal-de-berne.jpg', pos: '12% center' },
+        { year: '1998', title: 'Biocomedy', img: 'assets/1998-biocomedy.jpg', pos: 'center 20%' },
+        { year: '2010er', title: 'Radioshow mit roter Fliege', img: 'assets/radioshow.jpg', pos: 'center 30%' },
+        { year: '2020', title: 'Der Corona-Bart', img: 'assets/corona-bart.jpg', pos: 'center' },
+      ],
+      services: [
+        { name: 'Service & Kontrolle', note: 'Frühling ideal' },
+        { name: 'Platten & Pneus', note: 'oft sofort' },
+        { name: 'Bremsen & Schaltung', note: 'einstellen, ersetzen' },
+        { name: 'Occasionen & Trouvaillen', note: 'aus Alt mach Neu' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

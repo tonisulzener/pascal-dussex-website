@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pascal Dussex – Sänger, Entertainer, Velomech</title>
+<meta name="description" content="Pascal Dussex aus Bern: Sänger bei Dussex' Soultrain, Les trois Suisses und Dussex' True Blue – und Velomech im Blauen Wunder im Marzili.">
+<meta property="og:title" content="Pascal Dussex">
+<meta property="og:description" content="Sänger, Entertainer und Velomech aus Bern.">
+<meta property="og:image" content="img/portrait-12.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="#top" class="logo">Pascal Dussex</a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#live">Live</a>
+      <a href="#bands">Bands</a>
+      <a href="#zeitreise">Zeitreise</a>
+      <a href="#velo">Velowerkstatt</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="top" class="wrap hero">
+    <div class="hero__text">
+      <div class="eyebrow hero__kicker">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Bern · seit 1980 auf der Bühne</span>
+      </div>
+      <h1>Pascal<br>Dussex</h1>
+      <p class="hero__intro">Sänger, Entertainer und Velomech. Soul mit zehn Mann, Swiss-Comedy zu zweit, Jazz im Anzug – und dazwischen ein Budeli mit Velos.</p>
+      <div class="hero__ctas">
+        <a href="#live" class="btn btn--solid">Nächste Konzerte</a>
+        <a href="#velo" class="btn btn--outline">Velo flicken</a>
+      </div>
+    </div>
+    <figure>
+      <img src="img/portrait-12.jpg" alt="Pascal Dussex live auf der Bühne" width="1067" height="1600" fetchpriority="high">
+      <figcaption>Live auf der Bühne</figcaption>
+    </figure>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <span>Dussex' Soultrain</span><span class="star" aria-hidden="true">✶</span>
+      <span>Les trois Suisses</span><span class="star" aria-hidden="true">✶</span>
+      <span>Dussex' True Blue</span><span class="star" aria-hidden="true">✶</span>
+      <a href="#velo">Das Blaue Wunder</a>
+    </div>
+  </div>
+
+  <section id="live" class="wrap section">
+    <div class="section-head">
+      <h2 class="h2">Live</h2>
+      <div class="filters" role="group" aria-label="Konzerte nach Band filtern">
+        <button type="button" class="filter" data-filter="Alle" aria-pressed="true">Alle</button>
+        <button type="button" class="filter" data-filter="Soultrain" aria-pressed="false">Soultrain</button>
+        <button type="button" class="filter" data-filter="Les trois Suisses" aria-pressed="false">Les trois Suisses</button>
+        <button type="button" class="filter" data-filter="True Blue" aria-pressed="false">True Blue</button>
+      </div>
+    </div>
+
+    <!-- Termine: data-date (JJJJ-MM-TT) steuert das automatische Ausblenden vergangener Konzerte -->
+    <ul class="gigs">
+      <li class="gig" data-band="Soultrain" data-date="2026-09-26">
+        <div class="gig__date"><div class="gig__day">26</div><div class="gig__month">Sep 2026</div></div>
+        <div><div class="gig__place">Biel</div><div class="gig__venue">Le Singe · Anniversary</div></div>
+        <a class="gig__link" href="https://www.dussexsoultrain.ch/kalender" target="_blank" rel="noopener">Soultrain ↗</a>
+      </li>
+      <li class="gig" data-band="Les trois Suisses" data-date="2026-10-23">
+        <div class="gig__date"><div class="gig__day">23</div><div class="gig__month">Okt 2026</div></div>
+        <div><div class="gig__place">Wangen-Brüttisellen</div><div class="gig__venue">Gasthof Sternen · «Beiz»</div></div>
+        <a class="gig__link" href="https://www.lestroissuisses.ch/tourdaten" target="_blank" rel="noopener">Les trois Suisses ↗</a>
+      </li>
+      <li class="gig" data-band="Les trois Suisses" data-date="2026-10-30">
+        <div class="gig__date"><div class="gig__day">30</div><div class="gig__month">Okt 2026</div></div>
+        <div><div class="gig__place">Hinwil-Hadlikon</div><div class="gig__venue">Areal im Tobel · «Beiz»</div></div>
+        <a class="gig__link" href="https://www.lestroissuisses.ch/tourdaten" target="_blank" rel="noopener">Les trois Suisses ↗</a>
+      </li>
+      <li class="gig" data-band="Soultrain" data-date="2026-10-31">
+        <div class="gig__date"><div class="gig__day">31</div><div class="gig__month">Okt 2026</div></div>
+        <div><div class="gig__place">Frauenfeld</div><div class="gig__venue">Eisenwerk · feat. Freda Goodlett</div></div>
+        <a class="gig__link" href="https://www.dussexsoultrain.ch/kalender" target="_blank" rel="noopener">Soultrain ↗</a>
+      </li>
+      <li class="gig" data-band="Soultrain" data-date="2026-11-14">
+        <div class="gig__date"><div class="gig__day">14</div><div class="gig__month">Nov 2026</div></div>
+        <div><div class="gig__place">Langnau i. E.</div><div class="gig__venue">Kupferschmiede · 40 Y. Paragraph</div></div>
+        <a class="gig__link" href="https://www.dussexsoultrain.ch/kalender" target="_blank" rel="noopener">Soultrain ↗</a>
+      </li>
+      <li class="gig" data-band="True Blue" data-date="2026-12-10">
+        <div class="gig__date"><div class="gig__day">10</div><div class="gig__month">Dez 2026</div></div>
+        <div><div class="gig__place">Bern</div><div class="gig__venue">Breitschträff</div></div>
+        <a class="gig__link" href="https://www.trueblue-jazz.com/konzerte" target="_blank" rel="noopener">True Blue ↗</a>
+      </li>
+      <li class="gig" data-band="Les trois Suisses" data-date="2027-02-19">
+        <div class="gig__date"><div class="gig__day">19</div><div class="gig__month">Feb 2027</div></div>
+        <div><div class="gig__place">Wald ZH</div><div class="gig__venue">Reformierte Kirche · «Beiz»</div></div>
+        <a class="gig__link" href="https://www.lestroissuisses.ch/tourdaten" target="_blank" rel="noopener">Les trois Suisses ↗</a>
+      </li>
+      <li class="gig" data-band="True Blue" data-date="2027-02-26">
+        <div class="gig__date"><div class="gig__day">26</div><div class="gig__month">Feb 2027</div></div>
+        <div><div class="gig__place">Lörrach (DE)</div><div class="gig__venue">Jazztone</div></div>
+        <a class="gig__link" href="https://www.trueblue-jazz.com/konzerte" target="_blank" rel="noopener">True Blue ↗</a>
+      </li>
+      <li class="gig" data-band="Les trois Suisses" data-date="2027-03-31">
+        <div class="gig__date"><div class="gig__day">31</div><div class="gig__month">Mär 2027</div></div>
+        <div><div class="gig__place">Schlieren ZH</div><div class="gig__venue">Stürmeierhuus · «Beiz»</div></div>
+        <a class="gig__link" href="https://www.lestroissuisses.ch/tourdaten" target="_blank" rel="noopener">Les trois Suisses ↗</a>
+      </li>
+      <li class="gig" data-band="Les trois Suisses" data-date="2027-04-02">
+        <div class="gig__date"><div class="gig__day">02</div><div class="gig__month">Apr 2027</div></div>
+        <div><div class="gig__place">Staufen</div><div class="gig__venue">Zopfhuus · «Beiz»</div></div>
+        <a class="gig__link" href="https://www.lestroissuisses.ch/tourdaten" target="_blank" rel="noopener">Les trois Suisses ↗</a>
+      </li>
+      <li class="gig" data-band="Soultrain" data-date="2027-05-22">
+        <div class="gig__date"><div class="gig__day">22</div><div class="gig__month">Mai 2027</div></div>
+        <div><div class="gig__place">Erlach</div><div class="gig__venue">Erlach Festival · feat. Freda Goodlett</div></div>
+        <a class="gig__link" href="https://www.dussexsoultrain.ch/kalender" target="_blank" rel="noopener">Soultrain ↗</a>
+      </li>
+      <li class="gig" data-band="True Blue" data-date="2027-11-20">
+        <div class="gig__date"><div class="gig__day">20</div><div class="gig__month">Nov 2027</div></div>
+        <div><div class="gig__place">Mühlethurnen</div><div class="gig__venue">Alti Moschti</div></div>
+        <a class="gig__link" href="https://www.trueblue-jazz.com/konzerte" target="_blank" rel="noopener">True Blue ↗</a>
+      </li>
+    </ul>
+    <p class="note" id="gigs-empty" hidden>Aktuell keine Termine für diese Band – schau auf der Band-Seite vorbei.</p>
+    <p class="note">Weitere Termine folgen. Tickets über die jeweilige Band-Seite.</p>
+  </section>
+
+  <section id="bands" class="bands">
+    <div class="wrap section">
+      <div class="section-head">
+        <h2 class="h2">Bands</h2>
+        <p>Drei Formationen, eine Stimme. Jede Band hat ihre eigene Seite – hier geht's hin.</p>
+      </div>
+      <div class="band-grid">
+        <a class="band" href="https://www.dussexsoultrain.ch/" target="_blank" rel="noopener">
+          <div class="band__img"><img src="img/1980-konzert.jpg" alt="Dussex' Soultrain" style="object-position:center 40%" loading="lazy"></div>
+          <div class="band__body">
+            <div class="band__genre">Soul &amp; Funk</div>
+            <div class="band__name">Dussex' Soultrain</div>
+            <p class="band__text">Zehnköpfige Soul- &amp; Funk-Truppe mit messerscharfem fünfköpfigem Bläsersatz. Aktuell auf Anniversary-Tour.</p>
+            <div class="band__domain">dussexsoultrain.ch ↗</div>
+          </div>
+        </a>
+        <a class="band" href="https://www.lestroissuisses.ch/" target="_blank" rel="noopener">
+          <div class="band__img"><img src="img/radioshow.jpg" alt="Les trois Suisses" style="object-position:center 30%" loading="lazy"></div>
+          <div class="band__body">
+            <div class="band__genre">Musik-Comedy</div>
+            <div class="band__name">Les trois Suisses</div>
+            <p class="band__text">Drei Schweizer, rote Fliegen, viel Schalk. Das aktuelle Programm heisst «Beiz».</p>
+            <div class="band__domain">lestroissuisses.ch ↗</div>
+          </div>
+        </a>
+        <a class="band" href="https://www.trueblue-jazz.com/" target="_blank" rel="noopener">
+          <div class="band__img"><img src="img/1986-bal-de-berne.jpg" alt="Dussex' True Blue" style="object-position:15% center" loading="lazy"></div>
+          <div class="band__body">
+            <div class="band__genre">Jazz 'n' Soul</div>
+            <div class="band__name">Dussex' True Blue</div>
+            <p class="band__text">Seit über 30 Jahren in Originalbesetzung: funkiger Blues, swingender Jazz, französische Chansons. Neue CD «Stripes Is Our Favorite Color» (2024).</p>
+            <div class="band__members">Pascal Dussex · Andi Erchinger · Wege Wüthrich · German Klaiber · Elmar Frey</div>
+            <div class="band__domain">trueblue-jazz.com ↗</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="zeitreise" class="wrap section">
+    <div class="zeit-head">
+      <h2 class="h2">Zeit&shy;reise</h2>
+      <p class="lead">Vom Buben mit dem Glacé zum Frontmann mit Bläsersatz. Ein halbes Jahrhundert in sechs Bildern.</p>
+    </div>
+    <div class="timeline">
+      <figure>
+        <div class="timeline__img"><img src="img/1973.jpg" alt="Glacé in der Hand, Blick nach vorn" style="object-position:center 30%" loading="lazy"></div>
+        <figcaption><div class="timeline__year">1973</div><div class="timeline__title">Glacé in der Hand, Blick nach vorn</div></figcaption>
+      </figure>
+      <figure>
+        <div class="timeline__img"><img src="img/1980-konzert.jpg" alt="Das «erste» Konzert" style="object-position:center 40%" loading="lazy"></div>
+        <figcaption><div class="timeline__year">1980</div><div class="timeline__title">Das «erste» Konzert</div></figcaption>
+      </figure>
+      <figure>
+        <div class="timeline__img"><img src="img/1986-bal-de-berne.jpg" alt="Bal de Berne" style="object-position:12% center" loading="lazy"></div>
+        <figcaption><div class="timeline__year">1986</div><div class="timeline__title">Bal de Berne</div></figcaption>
+      </figure>
+      <figure>
+        <div class="timeline__img"><img src="img/1998-biocomedy.jpg" alt="Biocomedy" style="object-position:center 20%" loading="lazy"></div>
+        <figcaption><div class="timeline__year">1998</div><div class="timeline__title">Biocomedy</div></figcaption>
+      </figure>
+      <figure>
+        <div class="timeline__img"><img src="img/radioshow.jpg" alt="Radioshow mit roter Fliege" style="object-position:center 30%" loading="lazy"></div>
+        <figcaption><div class="timeline__year">2010er</div><div class="timeline__title">Radioshow mit roter Fliege</div></figcaption>
+      </figure>
+      <figure>
+        <div class="timeline__img"><img src="img/corona-bart.jpg" alt="Der Corona-Bart" loading="lazy"></div>
+        <figcaption><div class="timeline__year">2020</div><div class="timeline__title">Der Corona-Bart</div></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="velo" class="velo">
+    <div class="wrap section">
+      <div class="velo__intro">
+        <div class="eyebrow">Wenn gerade kein Konzert ist</div>
+        <h2 class="h2">Das Blaue Wunder</h2>
+        <p>Velowerkstatt im Marzili, Bern. Rhythm u Byciclette für ds Gmüet – Rock 'n' Roll fürs Velo statt Blues. Ist etwas «broche, verheit oder verboge»? Termin abmachen und vorbeikommen.</p>
+      </div>
+      <div>
+        <ul class="services">
+          <li><span>Service &amp; Kontrolle</span><span class="mono">Frühling ideal</span></li>
+          <li><span>Platten &amp; Pneus</span><span class="mono">oft sofort</span></li>
+          <li><span>Bremsen &amp; Schaltung</span><span class="mono">einstellen, ersetzen</span></li>
+          <li><span>Occasionen &amp; Trouvaillen</span><span class="mono">aus Alt mach Neu</span></li>
+        </ul>
+        <div class="velo__info">
+          <div><div class="label">Adresse</div><address>Münzrain 14<br>3005 Bern</address></div>
+          <div><div class="label">Termin</div><a href="tel:+41796502153">079 650 21 53</a><br><a href="mailto:pascal@dasblauewunder.be">pascal@dasblauewunder.be</a></div>
+          <div class="full"><div class="label">Anfahrt</div>Ab Talstation Marzilibähnli dem Wegweiser Bundesgärtnerei folgen, bis ans Ende des gelb geschindelten Hauses. Oder von der Bundesterrasse die Vannazhalde hinunter.</div>
+          <a class="btn--white" href="https://www.dasblauewunder.be/" target="_blank" rel="noopener">dasblauewunder.be ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="wrap section kontakt">
+    <img src="img/corona-bart.jpg" alt="Pascal Dussex, Porträt" loading="lazy">
+    <div class="kontakt__body">
+      <h2 class="h2">Kontakt</h2>
+      <p>Booking, Presse, ein kaputtes Velo oder einfach Hallo sagen.</p>
+      <div class="contact-list">
+        <a href="mailto:pascal@dussex.ch"><span>E-Mail</span><span class="mono">pascal@dussex.ch</span></a>
+        <a href="tel:+41796502153"><span>Telefon</span><span class="mono">079 650 21 53</span></a>
+        <a href="https://www.dussexsoultrain.ch/kontakt" target="_blank" rel="noopener"><span>Booking Soultrain</span><span class="mono">dussexsoultrain.ch ↗</span></a>
+        <a href="mailto:info@kulturbau.ch"><span>Booking Les trois Suisses</span><span class="mono">info@kulturbau.ch</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Pascal Dussex</span>
+    <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
