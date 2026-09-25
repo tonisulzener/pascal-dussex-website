@@ -1,0 +1,74 @@
+[
+  {
+    "date": "2026-09-26",
+    "place": "Biel",
+    "venue": "Le Singe",
+    "band": "Soultrain"
+  },
+  {
+    "date": "2026-10-23",
+    "place": "Wangen-Brüttisellen",
+    "venue": "Gasthof Sternen · «Beiz»",
+    "band": "Les trois Suisses"
+  },
+  {
+    "date": "2026-10-30",
+    "place": "Hinwil-Hadlikon",
+    "venue": "Areal im Tobel · «Beiz»",
+    "band": "Les trois Suisses"
+  },
+  {
+    "date": "2026-10-31",
+    "place": "Eisenwerk",
+    "venue": "Frauenfeld · feat. Freda Goodlett",
+    "band": "Soultrain"
+  },
+  {
+    "date": "2026-11-14",
+    "place": "Langnau i. E.",
+    "venue": "Kupferschmiede, 40Y Paragraph K · feat. Freda Goodlett",
+    "band": "Soultrain"
+  },
+  {
+    "date": "2026-12-10",
+    "place": "Bern",
+    "venue": "Breitschträff",
+    "band": "True Blue"
+  },
+  {
+    "date": "2027-02-19",
+    "place": "Wald ZH",
+    "venue": "Reformierte Kirche · «Beiz»",
+    "band": "Les trois Suisses"
+  },
+  {
+    "date": "2027-02-26",
+    "place": "Lörrach",
+    "venue": "Jazztone",
+    "band": "True Blue"
+  },
+  {
+    "date": "2027-03-31",
+    "place": "Schlieren ZH",
+    "venue": "Stürmeierhuus · «Beiz»",
+    "band": "Les trois Suisses"
+  },
+  {
+    "date": "2027-04-02",
+    "place": "Staufen",
+    "venue": "Zopfhuus · «Beiz»",
+    "band": "Les trois Suisses"
+  },
+  {
+    "date": "2027-05-22",
+    "place": "Erlach",
+    "venue": "Erlach Fetival · feat. Freda Goodlett",
+    "band": "Soultrain"
+  },
+  {
+    "date": "2027-11-20",
+    "place": "Mühlethurnen",
+    "venue": "Alti Moschti",
+    "band": "True Blue"
+  }
+]

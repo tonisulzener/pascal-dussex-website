@@ -1,0 +1,44 @@
+name: Konzerttermine aktualisieren
+
+on:
+  schedule:
+    - cron: "0 3 * * *" # täglich 03:00 UTC (04:00/05:00 Schweizer Zeit)
+  workflow_dispatch: # manuell über «Run workflow» auf GitHub startbar
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-gigs
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Termine von den Band-Seiten lesen
+        run: python3 scripts/update_gigs.py || echo "SOURCE_FAILED=1" >> "$GITHUB_ENV"
+
+      - name: Änderungen speichern
+        run: |
+          if git diff --quiet -- gigs.json; then
+            echo "Keine neuen Termine."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add gigs.json
+          git commit -m "Konzerttermine automatisch aktualisiert"
+          git push
+
+      - name: Bei Fehler benachrichtigen
+        if: env.SOURCE_FAILED == '1'
+        run: |
+          echo "::error::Mindestens eine Band-Seite konnte nicht gelesen werden – bisherige Termine wurden behalten. Details im Schritt «Termine von den Band-Seiten lesen»."
+          exit 1
