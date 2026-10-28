@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "Pascal Dussex – Sänger, Entertainer, Velomech",
+    "description": "Pascal Dussex aus Bern: Sänger bei Dussex' Soultrain, Les trois Suisses und Dussex' True Blue – und Velomech im Blauen Wunder im Marzili."
+  },
+  "hero": {
+    "kicker": "Bern · seit 1980 auf der Bühne",
+    "intro": "Sänger, Entertainer und Velomech. Soul mit zehn Mann, Swiss-Comedy zu zweit, Jazz im Anzug – und dazwischen ein Budeli mit Velos.",
+    "image": "img/portrait-12.jpg",
+    "image_alt": "Pascal Dussex live auf der Bühne",
+    "image_pos": "center bottom",
+    "caption": "Live auf der Bühne"
+  },
+  "live": {
+    "note": "Weitere Termine folgen. Tickets über die jeweilige Band-Seite."
+  },
+  "bands": {
+    "intro": "Drei Formationen, eine Stimme. Jede Band hat ihre eigene Seite – hier geht's hin.",
+    "items": [
+      {
+        "name": "Dussex' Soultrain",
+        "genre": "Soul & Funk",
+        "text": "Zehnköpfige Soul- & Funk-Truppe mit messerscharfem fünfköpfigem Bläsersatz. Aktuell auf Anniversary-Tour.",
+        "members": "",
+        "url": "https://www.dussexsoultrain.ch/",
+        "image": "img/1980-konzert.jpg",
+        "image_pos": "center 40%"
+      },
+      {
+        "name": "Les trois Suisses",
+        "genre": "Musik-Comedy",
+        "text": "Das kleinste Trio der Welt begeistert seit über 30 Jahren mit einer virtuosen Kombination aus Musik und Comedy.",
+        "members": "",
+        "url": "https://www.lestroissuisses.ch/",
+        "image": "img/radioshow.jpg",
+        "image_pos": "center 30%"
+      },
+      {
+        "name": "Dussex' True Blue",
+        "genre": "Jazz 'n' Soul",
+        "text": "Seit über 30 Jahren in Originalbesetzung: funkiger Blues, swingender Jazz, französische Chansons. Neue CD «Stripes Is Our Favorite Color» (2024).",
+        "members": "Pascal Dussex · Andi Erchinger · Wege Wüthrich · German Klaiber · Elmar Frey",
+        "url": "https://www.trueblue-jazz.com/",
+        "image": "img/1986-bal-de-berne.jpg",
+        "image_pos": "15% center"
+      }
+    ]
+  },
+  "zeitreise": {
+    "intro": "Vom Buben mit dem Glacé zum Frontmann mit Bläsersatz. Ein halbes Jahrhundert in sechs Bildern.",
+    "items": [
+      { "year": "1973", "title": "Glacé in der Hand, Blick nach vorn", "image": "img/1973.jpg", "image_pos": "center 30%" },
+      { "year": "1980", "title": "Das «erste» Konzert", "image": "img/1980-konzert.jpg", "image_pos": "center 40%" },
+      { "year": "1986", "title": "Bal de Berne", "image": "img/1986-bal-de-berne.jpg", "image_pos": "12% center" },
+      { "year": "1998", "title": "Biocomedy", "image": "img/1998-biocomedy.jpg", "image_pos": "center 20%" },
+      { "year": "2010er", "title": "Radioshow mit roter Fliege", "image": "img/radioshow.jpg", "image_pos": "center 30%" },
+      { "year": "2020", "title": "Der Corona-Bart", "image": "img/corona-bart.jpg", "image_pos": "center" }
+    ]
+  },
+  "velo": {
+    "eyebrow": "Wenn gerade kein Konzert ist",
+    "title": "Das Blaue Wunder",
+    "text": "Velowerkstatt im Marzili, Bern. Rhythm u Byciclette für ds Gmüet – Rock 'n' Roll fürs Velo statt Blues. Ist etwas «broche, verheit oder verboge»? Termin abmachen und vorbeikommen.",
+    "services": [
+      { "name": "Service & Kontrolle", "note": "Frühling ideal" },
+      { "name": "Platten & Pneus", "note": "oft sofort" },
+      { "name": "Bremsen & Schaltung", "note": "einstellen, ersetzen" },
+      { "name": "Occasionen & Trouvaillen", "note": "aus Alt mach Neu" }
+    ],
+    "address": "Münzrain 14\n3005 Bern",
+    "phone": "079 650 21 53",
+    "email": "pascal@dasblauewunder.be",
+    "directions": "Ab Talstation Marzilibähnli dem Wegweiser Bundesgärtnerei folgen, bis ans Ende des gelb geschindelten Hauses. Oder von der Bundesterrasse die Vannazhalde hinunter.",
+    "website": "https://www.dasblauewunder.be/"
+  },
+  "kontakt": {
+    "intro": "Booking, Presse, ein kaputtes Velo oder einfach Hallo sagen.",
+    "image": "img/corona-bart.jpg",
+    "image_alt": "Pascal Dussex, Porträt",
+    "items": [
+      { "label": "E-Mail", "value": "pascal@dussex.ch", "link": "mailto:pascal@dussex.ch" },
+      { "label": "Telefon", "value": "079 650 21 53", "link": "tel:+41796502153" },
+      { "label": "Booking Soultrain", "value": "dussexsoultrain.ch ↗", "link": "https://www.dussexsoultrain.ch/kontakt" },
+      { "label": "Booking Les trois Suisses", "value": "info@kulturbau.ch", "link": "mailto:info@kulturbau.ch" }
+    ]
+  }
+}

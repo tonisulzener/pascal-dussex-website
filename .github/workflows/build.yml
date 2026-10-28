@@ -1,0 +1,47 @@
+name: Seite bauen
+
+# Läuft, wenn im Admin-Editor (oder sonst) Inhalte, Vorlage oder Bilder geändert werden.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+      - "templates/**"
+      - "img/**"
+      - "scripts/build.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: commit-to-main
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install jinja2 pillow
+
+      - name: index.html erzeugen und Bilder optimieren
+        run: python3 scripts/build.py
+
+      - name: Ergebnis speichern
+        run: |
+          git add index.html img
+          if git diff --cached --quiet; then
+            echo "Nichts zu ändern."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Seite neu gebaut"
+          git pull --rebase
+          git push

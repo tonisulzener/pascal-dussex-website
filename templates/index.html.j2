@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<!-- Diese Datei wird aus templates/index.html.j2 und content/site.json erzeugt (scripts/build.py). Bitte nicht direkt bearbeiten. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ meta.title }}</title>
+<meta name="description" content="{{ meta.description }}">
+<meta property="og:title" content="Pascal Dussex">
+<meta property="og:description" content="{{ meta.description }}">
+<meta property="og:image" content="{{ hero.image }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="#top" class="logo">Pascal Dussex</a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#live">Live</a>
+      <a href="#bands">Bands</a>
+      <a href="#zeitreise">Zeitreise</a>
+      <a href="#velo">Velowerkstatt</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="top" class="wrap hero">
+    <div class="hero__text">
+      <div class="eyebrow hero__kicker">
+        <span class="dot" aria-hidden="true"></span>
+        <span>{{ hero.kicker }}</span>
+      </div>
+      <h1>Pascal<br>Dussex</h1>
+      <p class="hero__intro">{{ hero.intro }}</p>
+      <div class="hero__ctas">
+        <a href="#live" class="btn btn--solid">Nächste Konzerte</a>
+        <a href="#velo" class="btn btn--outline">Velo flicken</a>
+      </div>
+    </div>
+    <figure>
+      <img src="{{ hero.image }}" alt="{{ hero.image_alt }}"{{ pos(hero.image_pos) }} fetchpriority="high">
+      {% if hero.caption %}<figcaption>{{ hero.caption }}</figcaption>{% endif %}
+    </figure>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      {% for b in bands['items'] %}<span>{{ b.name }}</span><span class="star" aria-hidden="true">✶</span>
+      {% endfor %}<a href="#velo">{{ velo.title }}</a>
+    </div>
+  </div>
+
+  <section id="live" class="wrap section">
+    <div class="section-head">
+      <h2 class="h2">Live</h2>
+      <div class="filters" role="group" aria-label="Konzerte nach Band filtern">
+        <button type="button" class="filter" data-filter="Alle" aria-pressed="true">Alle</button>
+        <button type="button" class="filter" data-filter="Soultrain" aria-pressed="false">Soultrain</button>
+        <button type="button" class="filter" data-filter="Les trois Suisses" aria-pressed="false">Les trois Suisses</button>
+        <button type="button" class="filter" data-filter="True Blue" aria-pressed="false">True Blue</button>
+      </div>
+    </div>
+
+    <!-- Termine kommen aus gigs.json – wird täglich automatisch von den Band-Seiten aktualisiert (scripts/update_gigs.py) -->
+    <ul class="gigs" id="gigs" aria-live="polite"></ul>
+    <p class="note" id="gigs-empty" hidden>Aktuell keine Termine für diese Band – schau auf der Band-Seite vorbei.</p>
+    {% if live.note %}<p class="note">{{ live.note }}</p>{% endif %}
+  </section>
+
+  <section id="bands" class="bands">
+    <div class="wrap section">
+      <div class="section-head">
+        <h2 class="h2">Bands</h2>
+        <p>{{ bands.intro }}</p>
+      </div>
+      <div class="band-grid">
+        {% for b in bands['items'] %}
+        <a class="band" href="{{ b.url }}" target="_blank" rel="noopener">
+          <div class="band__img"><img src="{{ b.image }}" alt="{{ b.name }}"{{ pos(b.image_pos) }} loading="lazy"></div>
+          <div class="band__body">
+            <div class="band__genre">{{ b.genre }}</div>
+            <div class="band__name">{{ b.name }}</div>
+            <p class="band__text">{{ b.text }}</p>
+            {% if b.members %}<div class="band__members">{{ b.members }}</div>{% endif %}
+            <div class="band__domain">{{ b.url | domain }} ↗</div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="zeitreise" class="wrap section">
+    <div class="zeit-head">
+      <h2 class="h2">Zeit&shy;reise</h2>
+      <p class="lead">{{ zeitreise.intro }}</p>
+    </div>
+    <div class="timeline">
+      {% for t in zeitreise['items'] %}
+      <figure>
+        <div class="timeline__img"><img src="{{ t.image }}" alt="{{ t.title }}"{{ pos(t.image_pos) }} loading="lazy"></div>
+        <figcaption><div class="timeline__year">{{ t.year }}</div><div class="timeline__title">{{ t.title }}</div></figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section id="velo" class="velo">
+    <div class="wrap section">
+      <div class="velo__intro">
+        <div class="eyebrow">{{ velo.eyebrow }}</div>
+        <h2 class="h2">{{ velo.title }}</h2>
+        <p>{{ velo.text }}</p>
+      </div>
+      <div>
+        <ul class="services">
+          {% for s in velo.services %}<li><span>{{ s.name }}</span><span class="mono">{{ s.note }}</span></li>
+          {% endfor %}
+        </ul>
+        <div class="velo__info">
+          <div><div class="label">Adresse</div><address>{{ velo.address | nl2br }}</address></div>
+          <div><div class="label">Termin</div>{% if velo.phone %}<a href="{{ velo.phone | tel }}">{{ velo.phone }}</a><br>{% endif %}{% if velo.email %}<a href="mailto:{{ velo.email }}">{{ velo.email }}</a>{% endif %}</div>
+          {% if velo.directions %}<div class="full"><div class="label">Anfahrt</div>{{ velo.directions }}</div>{% endif %}
+          {% if velo.website %}<a class="btn--white" href="{{ velo.website }}" target="_blank" rel="noopener">{{ velo.website | domain }} ↗</a>{% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="wrap section kontakt">
+    <img src="{{ kontakt.image }}" alt="{{ kontakt.image_alt }}" loading="lazy">
+    <div class="kontakt__body">
+      <h2 class="h2">Kontakt</h2>
+      <p>{{ kontakt.intro }}</p>
+      <div class="contact-list">
+        {% for c in kontakt['items'] %}
+        <a href="{{ c.link }}"{% if (c.link or '').startswith('http') %} target="_blank" rel="noopener"{% endif %}><span>{{ c.label }}</span><span class="mono">{{ c.value }}</span></a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Pascal Dussex</span>
+    <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

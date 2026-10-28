@@ -1,0 +1,126 @@
+# Admin-Editor (Sveltia CMS) – erreichbar unter /admin
+# Anmeldung: «Sign In Using Access Token» mit einem GitHub-Zugangsschlüssel.
+backend:
+  name: github
+  repo: tonisulzener/pascal-dussex-website
+  branch: main
+  commit_messages:
+    update: "Inhalt geändert: {{slug}} (via Admin)"
+    uploadMedia: "Bild hochgeladen: {{path}} (via Admin)"
+    deleteMedia: "Bild gelöscht: {{path}} (via Admin)"
+
+site_url: https://tonisulzener.github.io/pascal-dussex-website/
+display_url: https://tonisulzener.github.io/pascal-dussex-website/
+
+media_folder: img
+public_folder: img
+
+collections:
+  - name: seiten
+    label: Inhalte
+    editor:
+      preview: false
+    files:
+      - name: startseite
+        label: Startseite
+        file: content/site.json
+        format: json
+        fields:
+          - label: Seite (Google & Teilen)
+            name: meta
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Titel im Browser-Tab, name: title, widget: string }
+              - { label: Beschreibung für Google, name: description, widget: text }
+
+          - label: Einstieg (oben)
+            name: hero
+            widget: object
+            fields:
+              - { label: Zeile über dem Namen, name: kicker, widget: string }
+              - { label: Einleitungstext, name: intro, widget: text }
+              - { label: Foto, name: image, widget: image, choose_url: false }
+              - { label: Bildbeschreibung (für Blinde/Google), name: image_alt, widget: string }
+              - { label: Bildausschnitt, name: image_pos, widget: string, required: false, hint: "z.B. «center bottom», «center 30%» (0% = oben, 100% = unten). Leer = Mitte." }
+              - { label: Bildunterschrift, name: caption, widget: string, required: false }
+
+          - label: Live
+            name: live
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Hinweis unter den Konzerten, name: note, widget: string, required: false, hint: "Die Konzerte selbst werden automatisch von den Band-Seiten übernommen." }
+
+          - label: Bands
+            name: bands
+            widget: object
+            fields:
+              - { label: Einleitung, name: intro, widget: text }
+              - label: Bands
+                name: items
+                widget: list
+                label_singular: Band
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: Name, name: name, widget: string }
+                  - { label: Stil, name: genre, widget: string }
+                  - { label: Beschreibung, name: text, widget: text }
+                  - { label: Besetzung, name: members, widget: string, required: false }
+                  - { label: Website, name: url, widget: string, hint: "mit https://" }
+                  - { label: Foto, name: image, widget: image, choose_url: false }
+                  - { label: Bildausschnitt, name: image_pos, widget: string, required: false, hint: "z.B. «center 30%»" }
+
+          - label: Zeitreise
+            name: zeitreise
+            widget: object
+            fields:
+              - { label: Einleitung, name: intro, widget: text }
+              - label: Bilder
+                name: items
+                widget: list
+                label_singular: Bild
+                summary: "{{fields.year}} – {{fields.title}}"
+                fields:
+                  - { label: Jahr, name: year, widget: string }
+                  - { label: Titel, name: title, widget: string }
+                  - { label: Foto, name: image, widget: image, choose_url: false }
+                  - { label: Bildausschnitt, name: image_pos, widget: string, required: false, hint: "z.B. «center 30%»" }
+
+          - label: Velowerkstatt
+            name: velo
+            widget: object
+            fields:
+              - { label: Zeile über dem Titel, name: eyebrow, widget: string }
+              - { label: Titel, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - label: Angebot
+                name: services
+                widget: list
+                label_singular: Angebot
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: Leistung, name: name, widget: string }
+                  - { label: Hinweis, name: note, widget: string, required: false }
+              - { label: Adresse, name: address, widget: text }
+              - { label: Telefon, name: phone, widget: string, required: false }
+              - { label: E-Mail, name: email, widget: string, required: false }
+              - { label: Anfahrt, name: directions, widget: text, required: false }
+              - { label: Website, name: website, widget: string, required: false, hint: "mit https://" }
+
+          - label: Kontakt
+            name: kontakt
+            widget: object
+            fields:
+              - { label: Einleitung, name: intro, widget: text }
+              - { label: Foto, name: image, widget: image, choose_url: false }
+              - { label: Bildbeschreibung, name: image_alt, widget: string }
+              - label: Kontaktzeilen
+                name: items
+                widget: list
+                label_singular: Zeile
+                summary: "{{fields.label}}: {{fields.value}}"
+                fields:
+                  - { label: Bezeichnung, name: label, widget: string }
+                  - { label: Angezeigter Text, name: value, widget: string }
+                  - { label: Link, name: link, widget: string, hint: "mailto:name@domain.ch · tel:+41791234567 · https://…" }
