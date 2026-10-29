@@ -109,7 +109,7 @@ img { display: block; max-width: 100%; }
 .strip a:hover { opacity: .75; }
 .strip .strip__velo { color: var(--blue); }
 .strip .strip__velo:hover { color: var(--blue-light); opacity: 1; }
-.strip__band--lestroissuisses { color: #d05e49 !important; }
+.strip__band--lestroissuisses { color: #ff4a36 !important; }
 
 /* Soultrain-Flyer: jeder Buchstabe eine Farbe */
 .st-1 { color: #516db6; }

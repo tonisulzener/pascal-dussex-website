@@ -4,6 +4,7 @@ und verkleinert zu grosse Fotos in img/ (z.B. Uploads aus dem Admin-Editor).
 
 Benötigt: pip install jinja2 pillow
 """
+import hashlib
 import json
 import re
 import sys
@@ -30,12 +31,21 @@ def slug(url):
 
 # Buchstabenfarben wie im Soultrain-Flyer (CSS-Klassen .st-1 … .st-9)
 def soultrain(name):
-    """Färbt das Wort «Soultrain» im Bandnamen Buchstabe für Buchstabe."""
+    """Färbt den Bandnamen mit «Soultrain» Buchstabe für Buchstabe."""
     m = re.search(r"soultrain", name, re.I)
     if not m:
         return escape(name)
-    letters = "".join(f'<span class="st-{i}">{escape(c)}</span>' for i, c in enumerate(m.group(0), 1))
-    return Markup(f"{escape(name[:m.start()])}{letters}{escape(name[m.end():])}")
+    def paint(text):
+        out, i = [], 0
+        for c in text:
+            if c.isspace():
+                out.append(c)
+            else:
+                i += 1
+                out.append(f'<span class="st-{(i - 1) % 9 + 1}">{escape(c)}</span>')
+        return "".join(out)
+    # Vor- und Nachsatz (z.B. «Dussex' ») ebenfalls bunt, «Soultrain» exakt wie im Flyer
+    return Markup(paint(name[:m.start()]) + paint(m.group(0)) + paint(name[m.end():]))
 
 
 def tel(number):
@@ -57,6 +67,12 @@ def pos(value):
     if not value or not re.fullmatch(r"[a-z0-9%. -]+", value):
         return ""
     return Markup(f' style="object-position:{value}"')
+
+
+def asset(path):
+    """styles.css -> styles.css?v=1a2b3c4d, damit Browser nach Änderungen nicht die alte Datei zeigen."""
+    digest = hashlib.md5((ROOT / path).read_bytes()).hexdigest()[:8]
+    return f"{path}?v={digest}"
 
 
 def optimize_images():
@@ -90,7 +106,7 @@ def main():
         keep_trailing_newline=True,
     )
     env.filters.update(domain=domain, slug=slug, soultrain=soultrain, tel=tel, nl2br=nl2br)
-    env.globals["pos"] = pos
+    env.globals.update(pos=pos, asset=asset)
     html = env.get_template("index.html.j2").render(**content)
 
     missing = [src for src in re.findall(r'<img src="([^"]+)"', html) if not (ROOT / src).exists()]

@@ -9,6 +9,8 @@ on:
       - "templates/**"
       - "img/**"
       - "scripts/build.py"
+      - "styles.css"
+      - "script.js"
   workflow_dispatch:
 
 permissions:
