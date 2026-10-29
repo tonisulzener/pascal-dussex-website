@@ -51,8 +51,8 @@
 
   <div class="strip">
     <div class="wrap">
-      {% for b in bands['items'] %}<span>{{ b.name }}</span><span class="star" aria-hidden="true">✶</span>
-      {% endfor %}<a href="#velo">{{ velo.title }}</a>
+      {% for b in bands['items'] %}<a href="#{{ b.url | slug }}" class="strip__band strip__band--{{ b.url | slug }}">{{ b.name | soultrain }}</a><span class="star" aria-hidden="true">✶</span>
+      {% endfor %}<a href="#velo" class="strip__velo">{{ velo.title }}</a>
     </div>
   </div>
 
@@ -81,7 +81,7 @@
       </div>
       <div class="band-grid">
         {% for b in bands['items'] %}
-        <a class="band" href="{{ b.url }}" target="_blank" rel="noopener">
+        <a class="band" id="{{ b.url | slug }}" href="{{ b.url }}" target="_blank" rel="noopener">
           <div class="band__img"><img src="{{ b.image }}" alt="{{ b.name }}"{{ pos(b.image_pos) }} loading="lazy"></div>
           <div class="band__body">
             <div class="band__genre">{{ b.genre }}</div>

@@ -23,6 +23,21 @@ def domain(url):
     return host.removeprefix("www.").rstrip("/")
 
 
+def slug(url):
+    """https://www.dussexsoultrain.ch/ -> «dussexsoultrain» (Anker und CSS-Klasse)."""
+    return re.sub(r"[^a-z0-9]+", "-", domain(url).lower().rsplit(".", 1)[0]).strip("-")
+
+
+# Buchstabenfarben wie im Soultrain-Flyer (CSS-Klassen .st-1 … .st-9)
+def soultrain(name):
+    """Färbt das Wort «Soultrain» im Bandnamen Buchstabe für Buchstabe."""
+    m = re.search(r"soultrain", name, re.I)
+    if not m:
+        return escape(name)
+    letters = "".join(f'<span class="st-{i}">{escape(c)}</span>' for i, c in enumerate(m.group(0), 1))
+    return Markup(f"{escape(name[:m.start()])}{letters}{escape(name[m.end():])}")
+
+
 def tel(number):
     digits = re.sub(r"[^\d+]", "", number)
     if digits.startswith("00"):
@@ -74,7 +89,7 @@ def main():
         undefined=ChainableUndefined,
         keep_trailing_newline=True,
     )
-    env.filters.update(domain=domain, tel=tel, nl2br=nl2br)
+    env.filters.update(domain=domain, slug=slug, soultrain=soultrain, tel=tel, nl2br=nl2br)
     env.globals["pos"] = pos
     html = env.get_template("index.html.j2").render(**content)
 

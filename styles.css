@@ -105,8 +105,22 @@ img { display: block; max-width: 100%; }
   text-transform: uppercase; letter-spacing: .03em;
 }
 .strip .star { color: var(--red-light); }
-.strip a { color: var(--blue); }
-.strip a:hover { color: var(--blue-light); }
+.strip a { color: var(--paper); }
+.strip a:hover { opacity: .75; }
+.strip .strip__velo { color: var(--blue); }
+.strip .strip__velo:hover { color: var(--blue-light); opacity: 1; }
+.strip__band--lestroissuisses { color: #d05e49 !important; }
+
+/* Soultrain-Flyer: jeder Buchstabe eine Farbe */
+.st-1 { color: #516db6; }
+.st-2 { color: #df6a61; }
+.st-3 { color: #00a0a0; }
+.st-4 { color: #93c01b; }
+.st-5 { color: #da9219; }
+.st-6 { color: #b73885; }
+.st-7 { color: #028237; }
+.st-8 { color: #93c01b; }
+.st-9 { color: #516db6; }
 
 /* Live */
 .section-head {
