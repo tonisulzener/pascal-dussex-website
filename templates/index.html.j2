@@ -96,27 +96,28 @@
         {% endfor %}
       </div>
 
-      {% if projects['items'] %}
-      <div class="projects" id="weitere-projekte">
-        <div class="projects__head">
-          <h3 class="projects__title">Weitere Projekte</h3>
-          {% if projects.intro %}<p>{{ projects.intro }}</p>{% endif %}
-        </div>
-        <div class="project-grid">
-          {% for p in projects['items'] %}
-          {% set tag = 'a' if p.url else 'div' %}
-          <{{ tag }} class="project" id="projekt-{{ p.name | nameslug }}"{% if p.url %} href="{{ p.url }}" target="_blank" rel="noopener"{% endif %}>
-            {% if p.genre %}<div class="band__genre">{{ p.genre }}</div>{% endif %}
-            <div class="project__name">{{ p.name }}</div>
-            {% if p.text %}<p class="project__text">{{ p.text }}</p>{% endif %}
-            {% if p.url %}<div class="band__domain">{{ p.url | domain }} ↗</div>{% endif %}
-          </{{ tag }}>
-          {% endfor %}
-        </div>
-      </div>
-      {% endif %}
     </div>
   </section>
+
+  {% if projects['items'] %}
+  <section id="weitere-projekte" class="projects">
+    <div class="wrap projects__inner">
+      <div class="projects__head">
+        <h2 class="projects__title">Weitere Projekte</h2>
+        {% if projects.intro %}<p>{{ projects.intro }}</p>{% endif %}
+      </div>
+      <ul class="project-list">
+        {% for p in projects['items'] %}
+        <li class="project" id="projekt-{{ p.name | nameslug }}">
+          <div class="project__name">{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name }}<span class="project__arrow" aria-hidden="true"> ↗</span></a>{% else %}{{ p.name }}{% endif %}</div>
+          <div class="project__genre">{{ p.genre }}</div>
+          <p class="project__text">{{ p.text }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  {% endif %}
 
   <section id="zeitreise" class="wrap section">
     <div class="zeit-head">

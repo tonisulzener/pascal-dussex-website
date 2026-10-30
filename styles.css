@@ -182,29 +182,36 @@ img { display: block; max-width: 100%; }
 .band__members { font-family: var(--mono); font-size: 12px; line-height: 1.6; color: var(--sand); }
 .band__domain { font-family: var(--mono); font-size: 13px; border-top: 1px solid var(--line-dark); padding-top: 14px; }
 
-/* Weitere Projekte (im dunklen Band-Bereich) */
-.projects { margin-top: clamp(48px, 6vw, 80px); }
-.projects__head {
-  display: flex; justify-content: space-between; align-items: end; gap: 16px 24px; flex-wrap: wrap;
-  margin-bottom: 24px;
+/* Weitere Projekte: eigener, bewusst kleinerer Abschnitt nach den Bands */
+.projects { border-bottom: 1px solid var(--ink); }
+.projects__inner {
+  padding-top: clamp(40px, 5vw, 64px); padding-bottom: clamp(40px, 5vw, 64px);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 24px clamp(32px, 5vw, 72px); align-items: start;
 }
+.projects__inner > .project-list { grid-column: span 2; }
+@media (max-width: 760px) { .projects__inner > .project-list { grid-column: auto; } }
+.projects__head { display: flex; flex-direction: column; gap: 12px; }
 .projects__title {
-  margin: 0; font-family: var(--display); font-weight: 900; font-size: clamp(36px, 4.5vw, 60px);
+  margin: 0; font-family: var(--display); font-weight: 900; font-size: clamp(32px, 3.6vw, 48px);
   line-height: .9; text-transform: uppercase;
 }
-.projects__head p { margin: 0; max-width: 40ch; font-size: 18px; line-height: 1.4; color: var(--sand); }
-.project-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
-  gap: 2px; background: var(--line-dark); border: 2px solid var(--line-dark);
-}
+.projects__head p { margin: 0; font-size: 17px; line-height: 1.4; color: var(--muted); }
+.project-list { margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--ink); }
 .project {
-  display: flex; flex-direction: column; gap: 10px; padding: 22px;
-  background: var(--ink); color: var(--paper);
+  display: grid; grid-template-columns: 200px 110px minmax(0, 1fr);
+  gap: 6px 20px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--ink);
 }
-a.project:hover { background: var(--hover-dark); color: var(--paper); }
-.project__name { font-family: var(--display); font-weight: 800; font-size: 30px; line-height: .95; text-transform: uppercase; }
-.project__text { margin: 0; font-size: 17px; line-height: 1.4; color: var(--sand); flex: 1; }
-.project .band__domain { margin-top: auto; }
+.project__name { font-family: var(--display); font-weight: 800; font-size: 22px; line-height: 1; text-transform: uppercase; }
+.project__name a { color: var(--ink); }
+.project__name a:hover { color: var(--red); }
+.project__arrow { font-family: var(--mono); font-size: 13px; font-weight: 400; }
+.project__genre { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.project__text { margin: 0; font-size: 16px; line-height: 1.4; color: var(--muted); }
+@media (max-width: 560px) {
+  .project { grid-template-columns: 1fr auto; }
+  .project__text { grid-column: 1 / -1; }
+}
 
 /* Zeitreise */
 .zeit-head {
