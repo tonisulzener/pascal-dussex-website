@@ -1,0 +1,32 @@
+{% extends "_base.html.j2" %}
+
+{% block title %}Impressum – Pascal Dussex{% endblock %}
+{% block meta %}<meta name="robots" content="noindex">{% endblock %}
+
+{% block main %}
+  <article class="wrap section legal">
+    <h1 class="h2">Impressum</h1>
+
+    <h2>Verantwortlich für den Inhalt</h2>
+    <p>
+      {{ impressum.name }}<br>
+      {{ impressum.address | nl2br }}
+    </p>
+    <p>
+      E-Mail: <a href="mailto:{{ impressum.email }}">{{ impressum.email }}</a><br>
+      Telefon: <a href="{{ impressum.phone | tel }}">{{ impressum.phone }}</a>
+    </p>
+
+    <h2>Haftungsausschluss</h2>
+    <p>Die Inhalte dieser Website werden mit grösster Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte wird jedoch keine Gewähr übernommen. Haftungsansprüche wegen Schäden materieller oder immaterieller Art, die aus dem Zugriff auf oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen entstehen, werden ausgeschlossen, soweit gesetzlich zulässig.</p>
+    <p>Die Konzerttermine werden automatisch von den Websites der jeweiligen Bands und Veranstalter übernommen. Massgebend sind die Angaben dort; kurzfristige Änderungen und Absagen sind möglich.</p>
+
+    <h2>Links auf andere Websites</h2>
+    <p>Diese Website enthält Links auf Websites von Dritten (z.B. Bands, Veranstalter, Ticketverkauf). Auf deren Inhalte besteht kein Einfluss, und es wird dafür keine Verantwortung übernommen. Verantwortlich ist jeweils der Betreiber der verlinkten Website.</p>
+
+    <h2>Urheberrechte</h2>
+    <p>Texte, Fotos und Grafiken auf dieser Website gehören {{ impressum.name }} oder den jeweiligen Bands, Fotografinnen und Fotografen. Jede Verwendung ausserhalb dieser Website braucht eine vorgängige schriftliche Zustimmung.</p>
+
+    <p class="legal__back"><a href="index.html">← Zur Startseite</a></p>
+  </article>
+{% endblock %}

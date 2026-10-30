@@ -171,5 +171,11 @@
       }
     ]
   },
-  "manual_gigs": []
+  "manual_gigs": [],
+  "impressum": {
+    "name": "Pascal Dussex",
+    "address": "Münzrain 14\n3005 Bern\nSchweiz",
+    "email": "pascal@dussex.ch",
+    "phone": "079 650 21 53"
+  }
 }

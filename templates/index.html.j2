@@ -1,35 +1,13 @@
-<!DOCTYPE html>
-<html lang="de-CH">
-<head>
-<!-- Diese Datei wird aus templates/index.html.j2 und content/site.json erzeugt (scripts/build.py). Bitte nicht direkt bearbeiten. -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ meta.title }}</title>
+{% extends "_base.html.j2" %}
+
+{% block meta %}
 <meta name="description" content="{{ meta.description }}">
 <meta property="og:title" content="Pascal Dussex">
 <meta property="og:description" content="{{ meta.description }}">
 <meta property="og:image" content="{{ hero.image }}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset('styles.css') }}">
-</head>
-<body>
+{% endblock %}
 
-<header class="site-header">
-  <div class="wrap">
-    <a href="#top" class="logo">Pascal Dussex</a>
-    <nav class="nav" aria-label="Hauptnavigation">
-      <a href="#live">Live</a>
-      <a href="#bands">Bands</a>
-      <a href="#zeitreise">Zeitreise</a>
-      <a href="#velo">Velowerkstatt</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
-  </div>
-</header>
-
-<main>
+{% block main %}
   <section id="top" class="wrap hero">
     <div class="hero__text">
       <div class="eyebrow hero__kicker">
@@ -168,15 +146,6 @@
       </div>
     </div>
   </section>
-</main>
+{% endblock %}
 
-<footer class="site-footer">
-  <div class="wrap">
-    <span>© <span id="year">2026</span> Pascal Dussex</span>
-    <span><a href="#">Impressum</a> · <a href="#">Datenschutz</a></span>
-  </div>
-</footer>
-
-<script src="{{ asset('script.js') }}"></script>
-</body>
-</html>
+{% block scripts %}<script src="{{ asset('script.js') }}"></script>{% endblock %}

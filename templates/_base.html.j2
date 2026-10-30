@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<!-- Diese Datei wird aus templates/ und content/site.json erzeugt (scripts/build.py). Bitte nicht direkt bearbeiten. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ meta.title }}{% endblock %}</title>
+{% block meta %}{% endblock %}
+<link rel="preload" href="fonts/big-shoulders-display-latin-48e1b4.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ asset('fonts/fonts.css') }}">
+<link rel="stylesheet" href="{{ asset('styles.css') }}">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="{{ home }}#top" class="logo">Pascal Dussex</a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="{{ home }}#live">Live</a>
+      <a href="{{ home }}#bands">Bands</a>
+      <a href="{{ home }}#zeitreise">Zeitreise</a>
+      <a href="{{ home }}#velo">Velowerkstatt</a>
+      <a href="{{ home }}#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+{% block main %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year">{{ year }}</span> Pascal Dussex</span>
+    <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+  </div>
+</footer>
+
+{% block scripts %}{% endblock %}
+</body>
+</html>

@@ -304,3 +304,19 @@ img { display: block; max-width: 100%; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* Impressum & Datenschutz */
+.legal { max-width: 760px; }
+.legal .h2 { margin-bottom: 32px; }
+.legal h2:not(.h2) {
+  margin: 36px 0 10px; font-family: var(--mono); font-size: 13px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.legal p { margin: 0 0 14px; font-size: 18px; line-height: 1.55; text-wrap: pretty; }
+.legal .legal__lead { font-size: 21px; line-height: 1.45; }
+.legal a { color: var(--red); text-decoration: underline; text-underline-offset: 2px; }
+.legal a:hover { color: var(--ink); }
+.legal__date { font-family: var(--mono); font-size: 13px !important; color: var(--muted); }
+.legal__back { margin-top: 40px !important; font-family: var(--mono); font-size: 14px !important; }
+.legal__back a { text-decoration: none; }
+

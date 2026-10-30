@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Erzeugt index.html aus content/site.json + templates/index.html.j2
+"""Erzeugt index.html, impressum.html und datenschutz.html aus content/site.json + templates/
 und verkleinert zu grosse Fotos in img/ (z.B. Uploads aus dem Admin-Editor).
 
 Benötigt: pip install jinja2 pillow
@@ -129,14 +129,19 @@ def main():
     )
     env.filters.update(domain=domain, slug=slug, nameslug=nameslug, soultrain=soultrain, tel=tel, nl2br=nl2br)
     env.globals.update(pos=pos, asset=asset)
-    html = env.get_template("index.html.j2").render(**content)
-
-    missing = [src for src in re.findall(r'<img src="([^"]+)"', html) if not (ROOT / src).exists()]
-    if missing:
-        sys.exit("Bilder nicht gefunden: " + ", ".join(missing))
-
-    (ROOT / "index.html").write_text(html, encoding="utf-8")
-    print("index.html erzeugt")
+    year = __import__("datetime").date.today().year
+    pages = {
+        "index.html": ("index.html.j2", ""),
+        "impressum.html": ("impressum.html.j2", "index.html"),
+        "datenschutz.html": ("datenschutz.html.j2", "index.html"),
+    }
+    for out, (template, home) in pages.items():
+        html = env.get_template(template).render(**content, home=home, year=year)
+        missing = [src for src in re.findall(r'<img src="([^"]+)"', html) if not (ROOT / src).exists()]
+        if missing:
+            sys.exit(f"{out}: Bilder nicht gefunden: " + ", ".join(missing))
+        (ROOT / out).write_text(html, encoding="utf-8")
+        print(f"{out} erzeugt")
     optimize_images()
 
 

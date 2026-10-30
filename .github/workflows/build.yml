@@ -11,6 +11,7 @@ on:
       - "scripts/build.py"
       - "styles.css"
       - "script.js"
+      - "fonts/**"
   workflow_dispatch:
 
 permissions:
@@ -37,7 +38,7 @@ jobs:
 
       - name: Ergebnis speichern
         run: |
-          git add index.html img
+          git add index.html impressum.html datenschutz.html img
           if git diff --cached --quiet; then
             echo "Nichts zu ändern."
             exit 0

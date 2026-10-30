@@ -141,6 +141,16 @@ collections:
                   - { label: Angezeigter Text, name: value, widget: string }
                   - { label: Link, name: link, widget: string, hint: "mailto:name@domain.ch · tel:+41791234567 · https://…" }
 
+          - label: Impressum & Datenschutz (Kontaktangaben)
+            name: impressum
+            widget: object
+            collapsed: true
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Adresse, name: address, widget: text }
+              - { label: E-Mail, name: email, widget: string }
+              - { label: Telefon, name: phone, widget: string }
+
           - label: Konzerte von Hand (z.B. Mario & Friends)
             name: manual_gigs
             widget: list
