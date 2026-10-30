@@ -200,7 +200,7 @@ img { display: block; max-width: 100%; }
 .timeline__title { font-size: 19px; line-height: 1.3; }
 
 /* Velo */
-.velo { background: var(--red); color: #fff; }
+.velo { background: var(--blue); color: #fff; }
 .velo .wrap {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
   gap: clamp(32px, 5vw, 72px);
@@ -224,7 +224,7 @@ img { display: block; max-width: 100%; }
 .velo__info address { font-style: normal; }
 .btn--white {
   grid-column: 1 / -1; justify-self: start; font-family: var(--mono); font-size: 14px;
-  text-transform: uppercase; letter-spacing: .08em; background: #fff; color: var(--red) !important; padding: 14px 22px;
+  text-transform: uppercase; letter-spacing: .08em; background: #fff; color: var(--blue) !important; padding: 14px 22px;
 }
 .btn--white:hover { background: var(--ink); color: #fff !important; text-decoration: none !important; }
 
