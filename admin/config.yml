@@ -71,6 +71,22 @@ collections:
                   - { label: Foto, name: image, widget: image, choose_url: false }
                   - { label: Bildausschnitt, name: image_pos, widget: string, required: false, hint: "z.B. «center 30%»" }
 
+          - label: Weitere Projekte
+            name: projects
+            widget: object
+            fields:
+              - { label: Einleitung, name: intro, widget: text, required: false }
+              - label: Projekte
+                name: items
+                widget: list
+                label_singular: Projekt
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: Name, name: name, widget: string, hint: "Muss gleich geschrieben sein wie bei den Konzertterminen (z.B. «Mario & Friends»)." }
+                  - { label: Stil, name: genre, widget: string, required: false }
+                  - { label: Beschreibung, name: text, widget: text, required: false }
+                  - { label: Website, name: url, widget: string, required: false, hint: "mit https:// – leer lassen, wenn es keine gibt" }
+
           - label: Zeitreise
             name: zeitreise
             widget: object
@@ -124,3 +140,20 @@ collections:
                   - { label: Bezeichnung, name: label, widget: string }
                   - { label: Angezeigter Text, name: value, widget: string }
                   - { label: Link, name: link, widget: string, hint: "mailto:name@domain.ch · tel:+41791234567 · https://…" }
+
+          - label: Konzerte von Hand (z.B. Mario & Friends)
+            name: manual_gigs
+            widget: list
+            required: false
+            label_singular: Konzert
+            summary: "{{fields.date}} · {{fields.band}} · {{fields.place}}"
+            hint: "Nur für Termine, die nicht automatisch von einer Band-Seite kommen. Vergangene Termine verschwinden von selbst."
+            fields:
+              - { label: Datum, name: date, widget: datetime, type: date, format: "YYYY-MM-DD", time_format: false }
+              - label: Band / Projekt
+                name: band
+                widget: select
+                options: ["Mario & Friends", "Bundesordner", "Jazz-Selection", "JOUB", "Soultrain", "Les trois Suisses", "True Blue"]
+              - { label: Ort, name: place, widget: string }
+              - { label: Lokal / Zusatz, name: venue, widget: string, required: false }
+              - { label: Link (Tickets/Infos), name: url, widget: string, required: false, hint: "mit https:// – leer = Link zur Projekt-Karte" }

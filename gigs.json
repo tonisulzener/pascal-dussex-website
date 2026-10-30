@@ -12,16 +12,87 @@
     "band": "Soultrain"
   },
   {
+    "date": "2026-11-07",
+    "place": "Bäuper Musig-Nacht im Restaurant Kreuz Belp",
+    "venue": "19.00 - 22.30 Uhr · feat. Pascal Dussex",
+    "url": "https://www.jazzselection.ch/agenda-2026/",
+    "band": "Jazz-Selection"
+  },
+  {
     "date": "2026-11-14",
     "place": "Langnau i. E.",
     "venue": "Kupferschmiede, 40Y Paragraph K · feat. Freda Goodlett",
     "band": "Soultrain"
   },
   {
+    "date": "2026-11-20",
+    "place": "Schwarzenburg",
+    "venue": "Aula OZ · JOUB feat. Pascal Dussex",
+    "url": "https://joub.squarespace.com/concerts/joub-feat-pascal-dussex",
+    "band": "JOUB"
+  },
+  {
     "date": "2026-12-10",
     "place": "Bern",
     "venue": "Breitschträff",
     "band": "True Blue"
+  },
+  {
+    "date": "2027-01-09",
+    "date_end": "2027-02-14",
+    "place": "Winterthur",
+    "venue": "Casinotheater · 18 Vorstellungen bis 14. Feb. 2027",
+    "url": "https://www.casinotheater.ch/spielplan/produktion/bundesordner/",
+    "band": "Bundesordner"
+  },
+  {
+    "date": "2027-01-27",
+    "place": "Stadttheater Schaffhausen",
+    "venue": "Bundesordner – On Tour",
+    "url": "https://www.casinotheater.ch/spielplan/produktion/bundesordner-on-tour/",
+    "band": "Bundesordner"
+  },
+  {
+    "date": "2027-01-28",
+    "place": "Stadttheater Schaffhausen",
+    "venue": "Bundesordner – On Tour",
+    "url": "https://www.casinotheater.ch/spielplan/produktion/bundesordner-on-tour/",
+    "band": "Bundesordner"
+  },
+  {
+    "date": "2027-01-29",
+    "place": "Stadttheater Olten",
+    "venue": "Bundesordner – On Tour",
+    "url": "https://www.casinotheater.ch/spielplan/produktion/bundesordner-on-tour/",
+    "band": "Bundesordner"
+  },
+  {
+    "date": "2027-01-30",
+    "place": "Kreuz Jona in Rapperswil",
+    "venue": "Bundesordner – On Tour",
+    "url": "https://www.casinotheater.ch/spielplan/produktion/bundesordner-on-tour/",
+    "band": "Bundesordner"
+  },
+  {
+    "date": "2027-02-03",
+    "place": "Theater National in Bern",
+    "venue": "Bundesordner – On Tour",
+    "url": "https://www.casinotheater.ch/spielplan/produktion/bundesordner-on-tour/",
+    "band": "Bundesordner"
+  },
+  {
+    "date": "2027-02-04",
+    "place": "Würth Haus Rorschach",
+    "venue": "Bundesordner – On Tour",
+    "url": "https://www.casinotheater.ch/spielplan/produktion/bundesordner-on-tour/",
+    "band": "Bundesordner"
+  },
+  {
+    "date": "2027-02-05",
+    "place": "Theater Casino Zug",
+    "venue": "Bundesordner – On Tour",
+    "url": "https://www.casinotheater.ch/spielplan/produktion/bundesordner-on-tour/",
+    "band": "Bundesordner"
   },
   {
     "date": "2027-02-19",
@@ -58,6 +129,13 @@
     "place": "Erlach",
     "venue": "Erlach Fetival · feat. Freda Goodlett",
     "band": "Soultrain"
+  },
+  {
+    "date": "2027-09-18",
+    "place": "Privatanlass im Parkhotel Gunten",
+    "venue": "18.00 - 23.00 Uhr · feat. Pascal Dussex",
+    "url": "https://www.jazzselection.ch/agenda-2026/",
+    "band": "Jazz-Selection"
   },
   {
     "date": "2027-11-20",

@@ -29,6 +29,14 @@ def slug(url):
     return re.sub(r"[^a-z0-9]+", "-", domain(url).lower().rsplit(".", 1)[0]).strip("-")
 
 
+def nameslug(name):
+    """«Mario & Friends» -> «mario-und-friends» (Anker)."""
+    name = name.lower().replace("&", "und")
+    for a, b in (("ä", "ae"), ("ö", "oe"), ("ü", "ue")):
+        name = name.replace(a, b)
+    return re.sub(r"[^a-z0-9]+", "-", name).strip("-")
+
+
 # Buchstabenfarben wie im Soultrain-Flyer (CSS-Klassen .st-1 … .st-9)
 def soultrain(name):
     """Färbt den Bandnamen mit «Soultrain» Buchstabe für Buchstabe."""
@@ -105,7 +113,7 @@ def main():
         undefined=ChainableUndefined,
         keep_trailing_newline=True,
     )
-    env.filters.update(domain=domain, slug=slug, soultrain=soultrain, tel=tel, nl2br=nl2br)
+    env.filters.update(domain=domain, slug=slug, nameslug=nameslug, soultrain=soultrain, tel=tel, nl2br=nl2br)
     env.globals.update(pos=pos, asset=asset)
     html = env.get_template("index.html.j2").render(**content)
 

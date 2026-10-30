@@ -46,6 +46,35 @@
       }
     ]
   },
+  "projects": {
+    "intro": "Wenn's passt, singt Pascal auch hier mit.",
+    "items": [
+      {
+        "name": "Bundesordner",
+        "genre": "Satire & Musik",
+        "text": "Der satirische Jahresrückblick im Casinotheater Winterthur und auf Tournee.",
+        "url": "https://www.casinotheater.ch/spielplan/produktion/bundesordner/"
+      },
+      {
+        "name": "Jazz-Selection",
+        "genre": "Jazz",
+        "text": "Jazzband aus der Region Bern – Dixieland, New Orleans, Swing. Pascal ist als Gastsänger dabei.",
+        "url": "https://www.jazzselection.ch/"
+      },
+      {
+        "name": "Mario & Friends",
+        "genre": "",
+        "text": "",
+        "url": ""
+      },
+      {
+        "name": "JOUB",
+        "genre": "Big Band",
+        "text": "Das Jazzorchester der Universität Bern – Pascal singt als Gast.",
+        "url": "https://joub.squarespace.com/"
+      }
+    ]
+  },
   "zeitreise": {
     "intro": "Vom Buben mit dem Glacé zum Frontmann mit Bläsersatz. Ein halbes Jahrhundert in sechs Bildern.",
     "items": [
@@ -141,5 +170,6 @@
         "link": "mailto:info@kulturbau.ch"
       }
     ]
-  }
+  },
+  "manual_gigs": []
 }

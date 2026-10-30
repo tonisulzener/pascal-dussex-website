@@ -52,7 +52,8 @@
   <div class="strip">
     <div class="wrap">
       {% for b in bands['items'] %}<a href="#{{ b.url | slug }}" class="strip__band strip__band--{{ b.url | slug }}">{{ b.name | soultrain }}</a><span class="star" aria-hidden="true">✶</span>
-      {% endfor %}<a href="#velo" class="strip__velo">{{ velo.title }}</a>
+      {% endfor %}{% if projects['items'] %}<a href="#weitere-projekte" class="strip__band">Weitere Projekte</a><span class="star" aria-hidden="true">✶</span>
+      {% endif %}<a href="#velo" class="strip__velo">{{ velo.title }}</a>
     </div>
   </div>
 
@@ -64,6 +65,7 @@
         <button type="button" class="filter" data-filter="Soultrain" aria-pressed="false">Soultrain</button>
         <button type="button" class="filter" data-filter="Les trois Suisses" aria-pressed="false">Les trois Suisses</button>
         <button type="button" class="filter" data-filter="True Blue" aria-pressed="false">True Blue</button>
+        {% if projects['items'] %}<button type="button" class="filter" data-filter="Weitere Projekte" aria-pressed="false">Weitere Projekte</button>{% endif %}
       </div>
     </div>
 
@@ -93,6 +95,26 @@
         </a>
         {% endfor %}
       </div>
+
+      {% if projects['items'] %}
+      <div class="projects" id="weitere-projekte">
+        <div class="projects__head">
+          <h3 class="projects__title">Weitere Projekte</h3>
+          {% if projects.intro %}<p>{{ projects.intro }}</p>{% endif %}
+        </div>
+        <div class="project-grid">
+          {% for p in projects['items'] %}
+          {% set tag = 'a' if p.url else 'div' %}
+          <{{ tag }} class="project" id="projekt-{{ p.name | nameslug }}"{% if p.url %} href="{{ p.url }}" target="_blank" rel="noopener"{% endif %}>
+            {% if p.genre %}<div class="band__genre">{{ p.genre }}</div>{% endif %}
+            <div class="project__name">{{ p.name }}</div>
+            {% if p.text %}<p class="project__text">{{ p.text }}</p>{% endif %}
+            {% if p.url %}<div class="band__domain">{{ p.url | domain }} ↗</div>{% endif %}
+          </{{ tag }}>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
     </div>
   </section>
 
