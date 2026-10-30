@@ -52,7 +52,7 @@
   <div class="strip">
     <div class="wrap">
       {% for b in bands['items'] %}<a href="#{{ b.url | slug }}" class="strip__band strip__band--{{ b.url | slug }}">{{ b.name | soultrain }}</a><span class="star" aria-hidden="true">✶</span>
-      {% endfor %}{% if projects['items'] %}<a href="#weitere-projekte" class="strip__band">Weitere Projekte</a><span class="star" aria-hidden="true">✶</span>
+      {% endfor %}{% if projects['items'] %}<a href="#weitere-projekte" class="strip__band">Weitere</a><span class="star" aria-hidden="true">✶</span>
       {% endif %}<a href="#velo" class="strip__velo">{{ velo.title }}</a>
     </div>
   </div>

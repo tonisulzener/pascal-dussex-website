@@ -100,9 +100,13 @@ img { display: block; max-width: 100%; }
   margin-top: clamp(32px, 5vw, 64px); overflow: hidden; background: var(--ink); color: var(--paper);
 }
 .strip .wrap {
-  padding-top: 14px; padding-bottom: 14px; display: flex; gap: 28px; flex-wrap: wrap;
-  font-family: var(--display); font-weight: 800; font-size: clamp(20px, 2.4vw, 30px);
+  padding-top: 14px; padding-bottom: 14px; display: flex; align-items: baseline;
+  gap: 10px clamp(10px, 1.5vw, 24px); flex-wrap: wrap;
+  font-family: var(--display); font-weight: 800; font-size: clamp(18px, 2vw, 30px);
   text-transform: uppercase; letter-spacing: .03em;
+}
+@media (min-width: 860px) {
+  .strip .wrap { flex-wrap: nowrap; justify-content: space-between; white-space: nowrap; }
 }
 .strip .star { color: var(--red-light); }
 .strip a { color: var(--paper); }
@@ -110,6 +114,7 @@ img { display: block; max-width: 100%; }
 .strip .strip__velo { color: var(--blue); }
 .strip .strip__velo:hover { color: var(--blue-light); opacity: 1; }
 .strip__band--lestroissuisses { color: #ff4a36 !important; }
+.strip__band--trueblue-jazz { color: #4cc9f0 !important; }
 
 /* Soultrain-Flyer: jeder Buchstabe eine Farbe */
 .st-1 { color: #516db6; }
