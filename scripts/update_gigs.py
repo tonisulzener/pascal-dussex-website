@@ -101,7 +101,6 @@ def parse_squarespace_text(page):
 CASINO = "https://www.casinotheater.ch/spielplan/produktion/"
 MONTHS_SHORT = {"jan": 1, "feb": 2, "mär": 3, "mar": 3, "apr": 4, "mai": 5, "jun": 6,
                 "jul": 7, "aug": 8, "sep": 9, "okt": 10, "nov": 11, "dez": 12}
-MONTH_NAMES = ["Jan.", "Feb.", "März", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sept.", "Okt.", "Nov.", "Dez."]
 
 
 def ld_events(page):
@@ -118,23 +117,25 @@ def ld_events(page):
 
 
 def src_bundesordner():
-    """casinotheater.ch: Heimspiel-Serie in Winterthur (als ein Eintrag) + Tour-Daten einzeln."""
+    """casinotheater.ch: Vorstellungen in Winterthur und Tour-Daten, alle einzeln."""
     gigs = []
     today = dt.date.today()
 
-    # Serie im Casinotheater: viele Vorstellungen -> ein Eintrag «bis …, n Vorstellungen»
+    # Vorstellungen im Casinotheater Winterthur, jede einzeln
     url = CASINO + "bundesordner/"
     page = fetch(url)
-    dates = sorted({e["startDate"][:10] for e in ld_events(page) if e.get("startDate", "")[:10] >= today.isoformat()})
-    if not ld_events(page):
+    events = ld_events(page)
+    if not events:
         raise SourceError("keine Events auf " + url)
-    if dates:
-        n = len(dates)
-        last = dt.date.fromisoformat(dates[-1])
-        venue = f"Casinotheater · {n} Vorstellung{'en' if n > 1 else ''}"
-        if n > 1:
-            venue += f" bis {last.day}. {MONTH_NAMES[last.month - 1]} {last.year}"
-        gigs.append({"date": dates[0], "date_end": dates[-1], "place": "Winterthur", "venue": venue, "url": url})
+    seen = set()
+    for e in events:
+        start = e.get("startDate", "")
+        d = start[:10]
+        if d < today.isoformat() or start in seen:
+            continue
+        seen.add(start)
+        time = start[11:16]
+        gigs.append({"date": d, "place": "Winterthur", "venue": f"Casinotheater · {time} Uhr" if time else "Casinotheater", "url": url})
 
     # Tournee: Spielorte stehen nur im Text («MI 27. JAN» / «Stadttheater Schaffhausen:»)
     url = CASINO + "bundesordner-on-tour/"

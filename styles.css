@@ -89,6 +89,17 @@ img { display: block; max-width: 100%; }
   width: 100%; height: auto; aspect-ratio: 1568 / 1980; object-fit: cover; object-position: center bottom;
   background: var(--ink);
 }
+/* Laptop & Desktop: Einstieg so hoch wie der Bildschirm, damit die Band-Leiste ohne Scrollen sichtbar ist.
+   Das Foto behält sein Format und wird bei Bedarf schmaler statt beschnitten. */
+@media (min-width: 900px) {
+  .hero { --hero-max: calc(100svh - 260px); padding-top: clamp(24px, 4svh, 64px); }
+  .strip { margin-top: clamp(20px, 3.5svh, 64px); }
+  .hero__intro { font-size: clamp(18px, min(2vw, 2.8svh), 26px); }
+  .hero figure { justify-self: end; max-width: 100%; }
+  .hero figure img { width: auto; max-width: 100%; max-height: max(380px, var(--hero-max)); }
+  .hero h1 { font-size: clamp(84px, min(13vw, 20svh), 196px); }
+  .hero__text { gap: clamp(16px, 3svh, 28px); }
+}
 .hero figcaption {
   position: absolute; left: 0; bottom: 0; background: var(--paper); padding: 8px 12px 0 0;
   font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
