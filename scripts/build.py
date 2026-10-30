@@ -99,14 +99,28 @@ def optimize_images():
             im = ImageOps.exif_transpose(im)
             im.thumbnail((MAX_SIDE, MAX_SIDE))
             if path.suffix.lower() == ".png":
+                # Grafiken/Flyer: auf 256 Farben reduzieren, sonst bleiben PNGs mehrere MB gross
+                im = im.convert("RGBA").quantize(256, method=Image.Quantize.FASTOCTREE)
                 im.save(path, optimize=True)
             else:
                 im.convert("RGB").save(path, quality=80, optimize=True, progressive=True)
         print(f"Bild optimiert: {path.relative_to(ROOT)} ({path.stat().st_size // 1024} KB)")
 
 
+def relative_paths(value):
+    """Der Admin-Editor speichert Bilder als «/img/…». Auf GitHub Pages liegt die Seite in einem
+    Unterordner, deshalb überall relativ «img/…» verwenden."""
+    if isinstance(value, dict):
+        return {k: relative_paths(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [relative_paths(v) for v in value]
+    if isinstance(value, str) and value.startswith("/img/"):
+        return value[1:]
+    return value
+
+
 def main():
-    content = json.loads((ROOT / "content" / "site.json").read_text(encoding="utf-8"))
+    content = relative_paths(json.loads((ROOT / "content" / "site.json").read_text(encoding="utf-8")))
     env = Environment(
         loader=FileSystemLoader(ROOT / "templates"),
         autoescape=True,
