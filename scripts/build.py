@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Erzeugt index.html, impressum.html und datenschutz.html aus content/site.json + templates/
-und verkleinert zu grosse Fotos in img/ (z.B. Uploads aus dem Admin-Editor).
+verkleinert zu grosse Fotos in img/ (z.B. Uploads aus dem Admin-Editor)
+und entfernt Metadaten wie GPS-Standort aus allen Bildern.
 
 Benötigt: pip install jinja2 pillow
 """
@@ -83,6 +84,67 @@ def asset(path):
     return f"{path}?v={digest}"
 
 
+# Metadaten-Segmente, die entfernt werden: EXIF/XMP (APP1, enthält GPS, Kamera, Datum),
+# IPTC (APP13) und Kommentare. Farbprofile (APP2/ICC) bleiben erhalten.
+JPEG_DROP = {0xE1, 0xED, 0xFE}
+PNG_DROP = {b"eXIf", b"tEXt", b"iTXt", b"zTXt", b"tIME"}
+
+
+def strip_jpeg(data):
+    """Entfernt Metadaten verlustfrei aus einer JPEG-Datei (Bilddaten bleiben unverändert)."""
+    if data[:2] != b"\xff\xd8":
+        return data
+    out, i = bytearray(data[:2]), 2
+    while i + 4 <= len(data) and data[i] == 0xFF:
+        marker = data[i + 1]
+        if marker == 0xDA:  # Start of Scan: ab hier nur noch Bilddaten
+            break
+        length = int.from_bytes(data[i + 2:i + 4], "big")
+        if marker not in JPEG_DROP:
+            out += data[i:i + 2 + length]
+        i += 2 + length
+    return bytes(out + data[i:])
+
+
+def strip_png(data):
+    """Entfernt Text-, Zeit- und EXIF-Blöcke aus einer PNG-Datei."""
+    if data[:8] != b"\x89PNG\r\n\x1a\n":
+        return data
+    out, i = bytearray(data[:8]), 8
+    while i + 8 <= len(data):
+        length = int.from_bytes(data[i:i + 4], "big")
+        kind = data[i + 4:i + 8]
+        chunk = data[i:i + 12 + length]
+        if kind not in PNG_DROP:
+            out += chunk
+        i += 12 + length
+    return bytes(out)
+
+
+def strip_metadata(folders=("img", "assets")):
+    """Entfernt GPS-Standort, Kameradaten usw. aus allen Bildern. Bilder mit Drehung im EXIF
+    werden vorher richtig herum gespeichert, damit sie nach dem Entfernen nicht kippen."""
+    from PIL import Image, ImageOps
+    for folder in folders:
+        for path in sorted((ROOT / folder).glob("*")):
+            suffix = path.suffix.lower()
+            if suffix not in {".jpg", ".jpeg", ".png"}:
+                continue
+            data = path.read_bytes()
+            if suffix in {".jpg", ".jpeg"}:
+                with Image.open(path) as im:
+                    turned = im.getexif().get(0x0112, 1) not in (1, None)
+                    if turned:
+                        ImageOps.exif_transpose(im).convert("RGB").save(path, quality=85, optimize=True, progressive=True)
+                        data = path.read_bytes()
+                clean = strip_jpeg(data)
+            else:
+                clean = strip_png(data)
+            if clean != data:
+                path.write_bytes(clean)
+                print(f"Metadaten entfernt: {path.relative_to(ROOT)}")
+
+
 def optimize_images():
     try:
         from PIL import Image, ImageOps
@@ -143,6 +205,7 @@ def main():
         (ROOT / out).write_text(html, encoding="utf-8")
         print(f"{out} erzeugt")
     optimize_images()
+    strip_metadata()
 
 
 if __name__ == "__main__":
