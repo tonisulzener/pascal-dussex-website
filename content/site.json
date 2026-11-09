@@ -299,5 +299,20 @@
     "email": "pascal@dussex.ch",
     "phone": "079 650 21 53"
   },
-  "manual_gigs": []
+  "manual_gigs": [
+    {
+      "date": "2027-03-25",
+      "band": "Mario & Friends",
+      "place": "Mühlethurnen",
+      "venue": "Moschti",
+      "url": ""
+    },
+    {
+      "date": "2027-09-14",
+      "band": "Mario & Friends",
+      "place": "Liebefeld",
+      "venue": "Landhaus",
+      "url": ""
+    }
+  ]
 }
