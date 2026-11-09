@@ -105,12 +105,22 @@
     <div class="timeline">
       {% for t in zeitreise['items'] %}
       <figure>
-        <div class="timeline__img"><img src="{{ t.image }}" alt="{{ t.title }}"{{ pos(t.image_pos) }} loading="lazy"></div>
+        <button type="button" class="timeline__img" aria-label="{{ t.year }} – {{ t.title }}: Bild vergrössern"><img src="{{ t.image }}" alt="{{ t.title }}"{{ pos(t.image_pos) }} loading="lazy"></button>
         <figcaption><div class="timeline__year">{{ t.year }}</div><div class="timeline__title">{{ t.title }}</div></figcaption>
       </figure>
       {% endfor %}
     </div>
   </section>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Bild aus der Zeitreise">
+    <button type="button" class="lightbox__btn lightbox__close" aria-label="Schliessen">✕</button>
+    <button type="button" class="lightbox__btn lightbox__prev" aria-label="Vorheriges Bild">←</button>
+    <button type="button" class="lightbox__btn lightbox__next" aria-label="Nächstes Bild">→</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" src="" alt="">
+      <figcaption class="lightbox__caption"><span class="lightbox__year"></span> <span class="lightbox__title"></span></figcaption>
+    </figure>
+  </dialog>
 
   <section id="velo" class="velo">
     <div class="wrap section">

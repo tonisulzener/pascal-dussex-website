@@ -245,7 +245,36 @@ img { display: block; max-width: 100%; }
   aspect-ratio: 1 / 1; overflow: hidden; background: #e4dccd; border: 1px solid var(--ink);
   display: flex; align-items: center; justify-content: center; padding: 8px;
 }
-.timeline__img img { width: 100%; height: 100%; object-fit: contain; }
+.timeline__img img { width: 100%; height: 100%; object-fit: contain; transition: transform .25s; }
+button.timeline__img { width: 100%; font: inherit; color: inherit; cursor: zoom-in; }
+button.timeline__img:hover img { transform: scale(1.04); }
+
+/* Grossansicht der Zeitreise-Bilder */
+.lightbox {
+  width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0;
+  background: rgba(28, 23, 20, .94); color: var(--paper);
+}
+.lightbox[open] { display: flex; align-items: center; justify-content: center; }
+.lightbox::backdrop { background: transparent; }
+.lightbox__figure {
+  margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px;
+  max-width: calc(100vw - 160px); cursor: zoom-out;
+}
+.lightbox__img { max-width: 100%; max-height: calc(100dvh - 140px); object-fit: contain; box-shadow: 0 10px 40px rgba(0,0,0,.5); }
+.lightbox__caption { text-align: center; font-size: 19px; line-height: 1.3; }
+.lightbox__year { font-family: var(--display); font-weight: 900; font-size: 30px; color: var(--red-light); margin-right: 8px; }
+.lightbox__btn {
+  position: absolute; background: transparent; border: 1px solid rgba(241, 235, 223, .4); color: var(--paper);
+  width: 48px; height: 48px; font-size: 22px; line-height: 1; cursor: pointer; font-family: var(--mono);
+}
+.lightbox__btn:hover { background: var(--paper); color: var(--ink); }
+.lightbox__close { top: 16px; right: 16px; }
+.lightbox__prev { left: 16px; top: 50%; transform: translateY(-50%); }
+.lightbox__next { right: 16px; top: 50%; transform: translateY(-50%); }
+@media (max-width: 640px) {
+  .lightbox__figure { max-width: calc(100vw - 32px); }
+  .lightbox__prev, .lightbox__next { top: auto; bottom: 16px; transform: none; }
+}
 .timeline figcaption { display: flex; flex-direction: column; gap: 4px; }
 .timeline__year { font-family: var(--display); font-weight: 900; font-size: 34px; line-height: .9; color: var(--red); }
 .timeline__title { font-size: 17px; line-height: 1.3; text-wrap: balance; }

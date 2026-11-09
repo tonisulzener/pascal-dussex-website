@@ -104,5 +104,39 @@
       empty.hidden = false;
     });
 
+  // Zeitreise: Bild anklicken -> gross anzeigen, nochmals klicken / Esc / ✕ -> wieder klein
+  var box = document.getElementById('lightbox');
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('.timeline figure'));
+  if (box && tiles.length && box.showModal) {
+    var bigImg = box.querySelector('.lightbox__img');
+    var shown = 0;
+
+    function show(i) {
+      shown = (i + tiles.length) % tiles.length;
+      var fig = tiles[shown];
+      var img = fig.querySelector('img');
+      bigImg.src = img.currentSrc || img.src;
+      bigImg.alt = img.alt;
+      box.querySelector('.lightbox__year').textContent = fig.querySelector('.timeline__year').textContent;
+      box.querySelector('.lightbox__title').textContent = fig.querySelector('.timeline__title').textContent;
+    }
+
+    tiles.forEach(function (fig, i) {
+      fig.querySelector('.timeline__img').addEventListener('click', function () {
+        show(i);
+        box.showModal();
+      });
+    });
+    box.querySelector('.lightbox__figure').addEventListener('click', function () { box.close(); });
+    box.querySelector('.lightbox__close').addEventListener('click', function () { box.close(); });
+    box.querySelector('.lightbox__prev').addEventListener('click', function () { show(shown - 1); });
+    box.querySelector('.lightbox__next').addEventListener('click', function () { show(shown + 1); });
+    box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
+    box.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') show(shown - 1);
+      if (e.key === 'ArrowRight') show(shown + 1);
+    });
+  }
+
   document.getElementById('year').textContent = today.getFullYear();
 })();
