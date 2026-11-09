@@ -5,7 +5,7 @@
   },
   "hero": {
     "kicker": "Bern · seit 1980 auf der Bühne",
-    "intro": "Sänger, Entertainer und Velomech. Soul mit zehn Mann, Swiss-Comedy zu zweit, Jazz im Anzug – und dazwischen ein Budeli mit Velos.",
+    "intro": "Sänger, Entertainer, Bandleader, Gastsänger, Bastler und Velomech.\nSoul & Funk mit zehn Mann, Swiss-Comedy zu zweit, Jazzquintett im Anzug,\nverschiedenen Sideprojekte und dazwischen ein kleines Budeli mit Velos.",
     "image": "img/portrait-12.jpg",
     "image_alt": "Pascal Dussex live auf der Bühne",
     "image_pos": "center bottom",
@@ -171,11 +171,11 @@
       }
     ]
   },
-  "manual_gigs": [],
   "impressum": {
     "name": "Pascal Dussex",
     "address": "Münzrain 14\n3005 Bern\nSchweiz",
     "email": "pascal@dussex.ch",
     "phone": "079 650 21 53"
-  }
+  },
+  "manual_gigs": []
 }
