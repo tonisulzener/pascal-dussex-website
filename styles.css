@@ -236,15 +236,19 @@ img { display: block; max-width: 100%; }
 }
 .zeit-head .lead { max-width: 44ch; }
 .timeline {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
-  gap: 40px 24px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 190px), 1fr));
+  gap: 32px 20px;
 }
-.timeline figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
-.timeline__img { aspect-ratio: 3 / 4; overflow: hidden; background: var(--sand); border: 1px solid var(--ink); }
-.timeline__img img { width: 100%; height: 100%; object-fit: cover; }
+.timeline figure { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+/* Ganze Bilder zeigen (Fotos, Plakate, Logos gemischt) statt zuzuschneiden */
+.timeline__img {
+  aspect-ratio: 1 / 1; overflow: hidden; background: #e4dccd; border: 1px solid var(--ink);
+  display: flex; align-items: center; justify-content: center; padding: 8px;
+}
+.timeline__img img { width: 100%; height: 100%; object-fit: contain; }
 .timeline figcaption { display: flex; flex-direction: column; gap: 4px; }
-.timeline__year { font-family: var(--display); font-weight: 900; font-size: 44px; line-height: .9; color: var(--red); }
-.timeline__title { font-size: 19px; line-height: 1.3; }
+.timeline__year { font-family: var(--display); font-weight: 900; font-size: 34px; line-height: .9; color: var(--red); }
+.timeline__title { font-size: 17px; line-height: 1.3; text-wrap: balance; }
 
 /* Velo */
 .velo { background: var(--blue); color: #fff; }

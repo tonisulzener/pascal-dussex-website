@@ -135,7 +135,7 @@
   </section>
 
   <section id="kontakt" class="wrap section kontakt">
-    <img src="{{ kontakt.image }}" alt="{{ kontakt.image_alt }}" loading="lazy">
+    <img src="{{ kontakt.image }}" alt="{{ kontakt.image_alt }}"{{ pos(kontakt.image_pos) }} loading="lazy">
     <div class="kontakt__body">
       <h2 class="h2">Kontakt</h2>
       <p>{{ kontakt.intro }}</p>

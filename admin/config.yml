@@ -131,6 +131,7 @@ collections:
               - { label: Einleitung, name: intro, widget: text }
               - { label: Foto, name: image, widget: image, choose_url: false }
               - { label: Bildbeschreibung, name: image_alt, widget: string }
+              - { label: Bildausschnitt, name: image_pos, widget: string, required: false, hint: "z.B. «center 30%» (0% = oben, 100% = unten)" }
               - label: Kontaktzeilen
                 name: items
                 widget: list

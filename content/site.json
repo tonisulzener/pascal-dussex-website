@@ -4,12 +4,12 @@
     "description": "Pascal Dussex aus Bern: Sänger bei Dussex' Soultrain, Les trois Suisses und Dussex' True Blue – und Velomech im Blauen Wunder im Marzili."
   },
   "hero": {
-    "kicker": "Bern · seit 1980 auf der Bühne",
+    "kicker": "Bern · seit 1977 auf der Bühne",
     "intro": "Sänger, Entertainer, Bandleader, Gastsänger, Bastler und Velomech.\nSoul & Funk mit zehn Mann, Swiss-Comedy zu zweit, Jazzquintett im Anzug,\nverschiedenen Sideprojekte und dazwischen ein kleines Budeli mit Velos.",
-    "image": "img/portrait-12.jpg",
-    "image_alt": "Pascal Dussex live auf der Bühne",
-    "image_pos": "center bottom",
-    "caption": "Live auf der Bühne"
+    "image": "img/portrait-mit-mik-19.jpg",
+    "image_alt": "Pascal Dussex mit Mikrofon",
+    "image_pos": "70% center",
+    "caption": "still alive & well"
   },
   "live": {
     "note": "Weitere Termine folgen. Tickets über die jeweilige Band-Seite."
@@ -63,8 +63,8 @@
       },
       {
         "name": "Mario & Friends",
-        "genre": "",
-        "text": "",
+        "genre": "R’n’B",
+        "text": "Allstar Band um Mario Capitanio (g, voc), mit Pascal Dussex und Tanja von Erlach (voc), Stefan W. Müller (keys), Boris Klečić (g), Pesche Enderli (b) und Rolf Huwyler (dr).",
         "url": ""
       },
       {
@@ -76,43 +76,169 @@
     ]
   },
   "zeitreise": {
-    "intro": "Vom Buben mit dem Glacé zum Frontmann mit Bläsersatz. Ein halbes Jahrhundert in sechs Bildern.",
+    "intro": "Vom strohblonden Knirps zum Frontmann mit Bläsersatz. Über sechzig Jahre Bühne in Bildern.",
     "items": [
       {
+        "year": "1963",
+        "title": "strohblonder Knirps",
+        "image": "img/1963-strohblonder-knirps.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "1969",
+        "title": "dunkelbrauner Knirps",
+        "image": "img/1969-dunkelbrauner-knirps.jpg",
+        "image_pos": ""
+      },
+      {
         "year": "1973",
-        "title": "Glacé in der Hand, Blick nach vorn",
+        "title": "Mani-Matter-Lieder an den Familienfesten",
         "image": "img/1973.jpg",
-        "image_pos": "center 30%"
+        "image_pos": ""
+      },
+      {
+        "year": "1977",
+        "title": "„erstes“ Konzert mit Uranus",
+        "image": "img/1980-konzert.jpg",
+        "image_pos": ""
       },
       {
         "year": "1980",
-        "title": "Das «erste» Konzert",
-        "image": "img/1980-konzert.jpg",
-        "image_pos": "center 40%"
+        "title": "Kater Karlo",
+        "image": "img/1980-kater-karlo.jpg",
+        "image_pos": ""
       },
       {
-        "year": "1986",
-        "title": "Bal de Berne",
+        "year": "1982",
+        "title": "Matz Manser Bend",
+        "image": "img/1982-matz-manser-bend.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "1985",
+        "title": "IGIM Blues Band",
+        "image": "img/1985-igim-blues-band.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "1989",
+        "title": "Bal de Berne Orchestra",
         "image": "img/1986-bal-de-berne.jpg",
-        "image_pos": "12% center"
+        "image_pos": ""
+      },
+      {
+        "year": "1990",
+        "title": "Tristan Vox & The Rhythm Thing",
+        "image": "img/1990-tristan-vox.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "1992",
+        "title": "Dussex’ True Blue",
+        "image": "img/1992-dussex-true-blue.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "1993",
+        "title": "Les Trois Suisses: Biocomedyshowband",
+        "image": "img/1993-biocomedyshowband.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "1995",
+        "title": "Hamidi – Dussex",
+        "image": "img/1995-hamidi-dussex.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "1996",
+        "title": "Dussex’ Soultrain",
+        "image": "img/1996-dussex-soultrain.jpg",
+        "image_pos": ""
       },
       {
         "year": "1998",
-        "title": "Biocomedy",
-        "image": "img/1998-biocomedy.jpg",
-        "image_pos": "center 20%"
+        "title": "TrickBag",
+        "image": "img/1998-trickbag.jpg",
+        "image_pos": ""
       },
       {
-        "year": "2010er",
-        "title": "Radioshow mit roter Fliege",
-        "image": "img/radioshow.jpg",
-        "image_pos": "center 30%"
+        "year": "1999",
+        "title": "Del Sasso & The Rossos",
+        "image": "img/1999-del-sasso-and-the-rossos.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "2005",
+        "title": "Radioshow",
+        "image": "img/2005-radioshow.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "2007",
+        "title": "The Making of",
+        "image": "img/2007-the-making-of.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "2009",
+        "title": "Die Drei …",
+        "image": "img/2009-die-drei.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "2011",
+        "title": "Herzverbrecher",
+        "image": "img/2011-herzverbrecher.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "2013",
+        "title": "Kings of Rock",
+        "image": "img/2013-kings-of-rock.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "2014",
+        "title": "erster Bundesordner",
+        "image": "img/2014-erster-bundesordner.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "2014",
+        "title": "Duo Pack",
+        "image": "img/2014-duo-pack.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "2017",
+        "title": "Tandem",
+        "image": "img/2017-tandem.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "2019",
+        "title": "T.R.N.E.: The Roger Nelson Project",
+        "image": "img/2019-trne.jpg",
+        "image_pos": ""
       },
       {
         "year": "2020",
-        "title": "Der Corona-Bart",
+        "title": "Vagabund",
+        "image": "img/2020-vagabund.jpg",
+        "image_pos": ""
+      },
+      {
+        "year": "2021",
+        "title": "Corona-Bart (Mr. Hemingway)",
         "image": "img/corona-bart.jpg",
-        "image_pos": "center"
+        "image_pos": ""
+      },
+      {
+        "year": "2024",
+        "title": "Beiz",
+        "image": "img/2024-beiz.jpg",
+        "image_pos": ""
       }
     ]
   },
@@ -146,30 +272,26 @@
   },
   "kontakt": {
     "intro": "Booking, Presse, ein kaputtes Velo oder einfach Hallo sagen.",
-    "image": "img/corona-bart.jpg",
+    "image": "img/portrait-ohne-mik.jpg",
     "image_alt": "Pascal Dussex, Porträt",
     "items": [
-      {
-        "label": "E-Mail",
-        "value": "pascal@dussex.ch",
-        "link": "mailto:pascal@dussex.ch"
-      },
       {
         "label": "Telefon",
         "value": "079 650 21 53",
         "link": "tel:+41796502153"
       },
       {
-        "label": "Booking Soultrain",
-        "value": "dussexsoultrain.ch ↗",
-        "link": "https://www.dussexsoultrain.ch/kontakt"
-      },
-      {
-        "label": "Booking Les trois Suisses",
+        "label": "Booking für Les trois Suisses",
         "value": "info@kulturbau.ch",
         "link": "mailto:info@kulturbau.ch"
+      },
+      {
+        "label": "Booking für alles andere",
+        "value": "pascal@dussex.ch",
+        "link": "mailto:pascal@dussex.ch"
       }
-    ]
+    ],
+    "image_pos": "center 55%"
   },
   "impressum": {
     "name": "Pascal Dussex",
