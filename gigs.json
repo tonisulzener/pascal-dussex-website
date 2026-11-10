@@ -124,6 +124,12 @@
     "band": "Bundesordner"
   },
   {
+    "date": "2027-01-29",
+    "place": "Olten",
+    "venue": "Stadttheater",
+    "band": "Les trois Suisses"
+  },
+  {
     "date": "2027-01-30",
     "place": "Kreuz Jona in Rapperswil",
     "venue": "Bundesordner – On Tour",
@@ -138,6 +144,12 @@
     "band": "Bundesordner"
   },
   {
+    "date": "2027-02-03",
+    "place": "Rorschach",
+    "venue": "Würth Haus",
+    "band": "Les trois Suisses"
+  },
+  {
     "date": "2027-02-04",
     "place": "Würth Haus Rorschach",
     "venue": "Bundesordner – On Tour",
@@ -150,6 +162,12 @@
     "venue": "Bundesordner – On Tour",
     "url": "https://www.casinotheater.ch/spielplan/produktion/bundesordner-on-tour/",
     "band": "Bundesordner"
+  },
+  {
+    "date": "2027-02-05",
+    "place": "Zug Casino Theater",
+    "venue": "",
+    "band": "Les trois Suisses"
   },
   {
     "date": "2027-02-06",
@@ -204,6 +222,12 @@
     "place": "Lörrach",
     "venue": "Jazztone",
     "band": "True Blue"
+  },
+  {
+    "date": "2027-03-13",
+    "place": "Ueberstorf",
+    "venue": "Schloss · «Beiz»",
+    "band": "Les trois Suisses"
   },
   {
     "date": "2027-03-31",
