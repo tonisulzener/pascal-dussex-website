@@ -9,8 +9,8 @@ backend:
     uploadMedia: "Bild hochgeladen: {{path}} (via Admin)"
     deleteMedia: "Bild gelöscht: {{path}} (via Admin)"
 
-site_url: https://tonisulzener.github.io/pascal-dussex-website/
-display_url: https://tonisulzener.github.io/pascal-dussex-website/
+site_url: https://www.dussex.ch/
+display_url: https://www.dussex.ch/
 
 media_folder: img
 public_folder: img
